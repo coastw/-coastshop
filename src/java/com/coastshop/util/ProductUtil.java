@@ -30,10 +30,9 @@ public class ProductUtil {
 //    public static final String COLORREGEX = "^[0-9]{3}";
 //    public static final String SIZEREGEX = "^[0][1-5]$";
 //    public static final String SNOREGEX = "^[1]{1}[0-9]{1}[1-8]{1}[0-9a-zA-Z]{0,2}[0-9]{6,7}[0-9]{3}[0][1-5]$";
-    
+
     //15206AK020636 012 02
     //15206AK02063601202
-
     public static ProductInfo getProductInfo(String sn) {
         ProductInfo pi = new ProductInfo();
         if (isValidate(sn)) {
@@ -67,12 +66,14 @@ public class ProductUtil {
             pi.setColorType(getColorType(color));
             pi.setLocalSize(getLocalSize(sn, size));
             pi.setWorldSize(getWorldSize(sn, size));
+            pi.setOriginColor(getOriginColor(color));
         } else {
             pi.setSn(sn);
             pi.setColor(color);
             pi.setSize(size);
             if (isValidateColor(color)) {
                 pi.setColorType(getColorType(color));
+                pi.setOriginColor(getOriginColor(color));
             }
             if (isValidateSize(size)) {
                 pi.setLocalSize(getLocalSize(sn, size));
@@ -557,39 +558,231 @@ public class ProductUtil {
         return fitSeason;
     }
 
+//    		022	亮色	043	粉红	054	墨绿	071	浅灰	101	鹅黄
+//		023	亚光色	044	紫红	055	亮绿	072	中灰	102	桔黄
+//		029	沙色	045	桔红	056	灰绿	073	深灰	103	浅黄
+//010	珍珠色	030	米色	046	梅红	060	浅蓝	074	花灰	104	黄色
+//011	漂白	031	棕米色	047	铁锈红	061	蓝色	081	紫色	105	105
+//012	本白	032	沙白	048	西瓜红	062	孔雀蓝	082	紫罗兰	111	深黄
+//013	本色	035	米黄	049	桃红	063	深蓝	083	深紫	112	金色
+//014	米白	040	红色	051	果绿	064	牛仔蓝	091	咖啡	113	银色
+//020	黑色	041	大红	052	军绿	065	宝蓝	092	棕色	115	裸色
+//021	亚黑	042	枣红	053	蓝绿	070	灰色	093	红咖	116	裸粉
+    public static String getOriginColor(String color) {
+        String originColor;
+        if (color.equals("010")) {
+            originColor = "珍珠白";
+        } else if (color.equals("011")) {
+            originColor = "漂白";
+        } else if (color.equals("012")) {
+            originColor = "本白";
+        } else if (color.equals("014")) {
+            originColor = "米白";
+        } else if (color.equals("020")) {
+            originColor = "黑色";
+        } else if (color.equals("029")) {
+            originColor = "沙色";
+        } else if (color.equals("030")) {
+            originColor = "米色";
+        } else if (color.equals("031")) {
+            originColor = "棕米色";
+        } else if (color.equals("033")) {
+            originColor = "卡其色";
+        } else if (color.equals("035")) {
+            originColor = "米黄";
+        } else if (color.equals("040")) {
+            originColor = "橡皮红";
+        } else if (color.equals("041")) {
+            originColor = "大红";
+        } else if (color.equals("042")) {
+            originColor = "枣红";
+        } else if (color.equals("043")) {
+            originColor = "粉红";
+        } else if (color.equals("044")) {
+            originColor = "紫红";
+        } else if (color.equals("045")) {
+            originColor = "桔红";
+        } else if (color.equals("046")) {
+            originColor = "梅红";
+        } else if (color.equals("047")) {
+            originColor = "铁锈红";
+        } else if (color.equals("048")) {
+            originColor = "肉粉色";
+        } else if (color.equals("049")) {
+            originColor = "桃红";
+        } else if (color.equals("050")) {
+            originColor = "浅粉桔";
+        } else if (color.equals("051")) {
+            originColor = "果绿";
+        } else if (color.equals("052")) {
+            originColor = "军绿";
+        } else if (color.equals("053")) {
+            originColor = "蓝绿";
+        } else if (color.equals("054")) {
+            originColor = "墨绿";
+        } else if (color.equals("055")) {
+            originColor = "亮绿";
+        } else if (color.equals("056")) {
+            originColor = "灰绿";
+        } else if (color.equals("058")) {
+            originColor = "芥末绿";
+        } else if (color.equals("060")) {
+            originColor = "浅蓝";
+        } else if (color.equals("061")) {
+            originColor = "蓝色";
+        } else if (color.equals("062")) {
+            originColor = "宝蓝";
+        } else if (color.equals("063")) {
+            originColor = "深蓝";
+        } else if (color.equals("064")) {
+            originColor = "牛仔蓝";
+        } else if (color.equals("071")) {
+            originColor = "浅灰";
+        } else if (color.equals("072")) {
+            originColor = "中灰";
+        } else if (color.equals("073")) {
+            originColor = "深灰";
+        } else if (color.equals("074")) {
+            originColor = "花灰";
+        } else if (color.equals("081")) {
+            originColor = "紫色";
+        } else if (color.equals("084")) {
+            originColor = "灰紫";
+        } else if (color.equals("091")) {
+            originColor = "咖啡";
+        } else if (color.equals("092")) {
+            originColor = "棕色";
+        } else if (color.equals("093")) {
+            originColor = "红咖";
+        } else if (color.equals("101")) {
+            originColor = "鹅黄";
+        } else if (color.equals("102")) {
+            originColor = "桔黄";
+        } else if (color.equals("103")) {
+            originColor = "浅黄";
+        } else if (color.equals("104")) {
+            originColor = "黄色";
+        } else if (color.equals("105")) {
+            originColor = "深黄";
+        } else if (color.equals("111")) {
+            originColor = "藏青色";
+        } else if (color.equals("112")) {
+            originColor = "金色";
+        } else if (color.equals("115")) {
+            originColor = "裸色";
+        } else if (color.equals("116")) {
+            originColor = "粉桔";
+        } else if (color.equals("117")) {
+            originColor = "水绿";
+        } else if (color.equals("118")) {
+            originColor = "绿色";
+        } else {
+            originColor = color;
+        }
+        return originColor;
+    }
+    //
+//112	金色	黄色系
+//093	红咖	棕色系
+//092	棕色	棕色系
+//063	深蓝	蓝色系
+
+    //add true color
+//072 中灰
+//073 深灰
+//056 灰绿 绿色
+//115 裸色 黄色系
+//091 咖啡 棕色系
+//047 铁锈红 红色系
+//048 肉粉色 粉色系
+    //true color
+//010	珍珠白	白色系
+//012	本白	白色系
+//014	米白	白色系
+//020	黑色	黑色系
+//030	米色	白色系
+//031	棕米色	棕色系
+//033	卡其色	黄色系
+//041	大红	红色系
+//042	枣红	红色系
+//043	粉红	粉色系
+//045	桔红	桔色系
+//046	梅红	粉色系
+//049	桃红	粉色系
+//050	浅粉桔	桔色系
+//051	果绿	绿色系
+//052	军绿	绿色系
+//053	蓝绿	绿色系
+//054	墨绿	绿色系
+//055	亮绿	绿色系
+//058	芥末绿	绿色系
+//060	浅蓝	蓝色系
+//061	蓝色	蓝色系
+//062	宝蓝	蓝色系
+//064	牛仔蓝	蓝色系
+//071	浅灰	灰色系
+//074	花灰	灰色系
+//081	紫色	紫色系
+//084	灰紫	紫色系
+//101	鹅黄	黄色系
+//102	桔黄	桔色系
+//103	浅黄	黄色系
+//104	黄色	黄色系
+//105	深黄	黄色系
+//111	藏青色	蓝色系
+//116	粉桔	桔色系
+//116	粉桔	粉色系
+//117	水绿	绿色系
+//118	绿色	绿色系
+    //old color
+//    		022	亮色	043	粉红	054	墨绿	071	浅灰	101	鹅黄
+//		023	亚光色	044	紫红	055	亮绿	072	中灰	102	桔黄
+//		029	沙色	045	桔红	056	灰绿	073	深灰	103	浅黄
+//010	珍珠色	030	米色	046	梅红	060	浅蓝	074	花灰	104	黄色
+//011	漂白	031	棕米色	047	铁锈红	061	蓝色	081	紫色	105	105
+//012	本白	032	沙白	048	西瓜红	062	孔雀蓝	082	紫罗兰	111	深黄
+//013	本色	035	米黄	049	桃红	063	深蓝	083	深紫	112	金色
+//014	米白	040	红色	051	果绿	064	牛仔蓝	091	咖啡	113	银色
+//020	黑色	041	大红	052	军绿	065	宝蓝	092	棕色	115	裸色
+//021	亚黑	042	枣红	053	蓝绿	070	灰色	093	红咖	116	裸粉
     //TODO
     public static String getColorType(String color) {
         String colorType;
         if (color.equals("010") || color.equals("011") || color.equals("012")
-                || color.equals("013") || color.equals("014")) {
+                || color.equals("014") || color.equals("030")) {
             colorType = "白色";
-        } else if (color.equals("030") || color.equals("031") || color.equals("032") || color.equals("033") || color.equals("035")
-                || color.equals("101") || color.equals("102") || color.equals("103") || color.equals("104")
-                || color.equals("105") || color.equals("112")
-                || color.equals("115") || color.equals("116")) {
-            colorType = "黄色";
-        } else if (color.equals("081") || color.equals("082") || color.equals("083")) {
-            colorType = "紫色";
-        } else if (color.equals("041") || color.equals("042") || color.equals("043")
-                || color.equals("044") || color.equals("045") || color.equals("046")
-                || color.equals("047") || color.equals("048") || color.equals("049") || color.equals("040")) {
-            colorType = "红色";
-        } else if (color.equals("020") || color.equals("021") || color.equals("022")
-                || color.equals("023") || color.equals("111") || color.equals("029")) {
+        } else if (color.equals("043") || color.equals("046") || color.equals("048")
+                || color.equals("049") || color.equals("116")) {
+            colorType = "粉色";
+        } else if (color.equals("020")) {
             colorType = "黑色";
-        } else if (color.equals("050") || color.equals("051") || color.equals("052") || color.equals("053")
-                || color.equals("054") || color.equals("055") || color.equals("056")) {
-            colorType = "绿色";
-        } else if (color.equals("070") || color.equals("071") || color.equals("072")
-                || color.equals("073") || color.equals("074") || color.equals("113")) {
+        } else if (color.equals("040") || color.equals("041") || color.equals("042")
+                || color.equals("044") || color.equals("047")) {
+            colorType = "红色";
+        } else if (color.equals("033") || color.equals("035") || color.equals("101")
+                || color.equals("103") || color.equals("104") || color.equals("105")
+                || color.equals("112") || color.equals("115")) {
+            colorType = "黄色";
+        } else if (color.equals("071") || color.equals("072") || color.equals("073")
+                || color.equals("074")) {
             colorType = "灰色";
+        } else if (color.equals("045") || color.equals("050") || color.equals("102")
+                || color.equals("116")) {
+            colorType = "桔色";
         } else if (color.equals("060") || color.equals("061") || color.equals("062")
-                || color.equals("063") || color.equals("064") || color.equals("065")) {
+                || color.equals("063") || color.equals("064") || color.equals("111")) {
             colorType = "蓝色";
-        } else if (color.equals("091") || color.equals("092") || color.equals("093")) {
+        } else if (color.equals("051") || color.equals("052") || color.equals("053")
+                || color.equals("054") || color.equals("055") || color.equals("056")
+                || color.equals("058") || color.equals("117") || color.equals("118")) {
+            colorType = "绿色";
+        } else if (color.equals("081") || color.equals("084")) {
+            colorType = "紫色";
+        } else if (color.equals("029") || color.equals("031") || color.equals("091")
+                || color.equals("092") || color.equals("093")) {
             colorType = "棕色";
         } else {
-            colorType = "#";
+            colorType = "#" + color;
         }
         return colorType;
     }
@@ -615,8 +808,8 @@ public class ProductUtil {
                 } else {
                     localSize = "#";
                 }
-            } else { //shangyi
-                if (size.equals("01")) {
+            } else //shangyi
+             if (size.equals("01")) {
                     localSize = "S";
                 } else if (size.equals("02")) {
                     localSize = "M";
@@ -629,7 +822,6 @@ public class ProductUtil {
                 } else {
                     localSize = "#";
                 }
-            }
 
         } else if (sn.matches(NEWREG)) {// after 2014
             String ts;
@@ -648,8 +840,8 @@ public class ProductUtil {
                 } else {
                     localSize = "#";
                 }
-            } else { //shangyi
-                if (size.equals("01")) {
+            } else //shangyi
+             if (size.equals("01")) {
                     localSize = "S";
                 } else if (size.equals("02")) {
                     localSize = "M";
@@ -662,7 +854,6 @@ public class ProductUtil {
                 } else {
                     localSize = "#";
                 }
-            }
         } else {    //0ld
             String ts;
             if (sn.length() == 9) {
@@ -685,8 +876,8 @@ public class ProductUtil {
                 } else {
                     localSize = "#";
                 }
-            } else { //shangyi
-                if (size.equals("01")) {
+            } else //shangyi
+             if (size.equals("01")) {
                     localSize = "S";
                 } else if (size.equals("02")) {
                     localSize = "M";
@@ -699,7 +890,6 @@ public class ProductUtil {
                 } else {
                     localSize = "#";
                 }
-            }
         }
 
         return localSize;
@@ -726,8 +916,8 @@ public class ProductUtil {
                 } else {
                     worldSize = "#";
                 }
-            } else { //shangyi
-                if (size.equals("01")) {
+            } else //shangyi
+             if (size.equals("01")) {
                     worldSize = "155/80A";
                 } else if (size.equals("02")) {
                     worldSize = "160/84A";
@@ -740,7 +930,6 @@ public class ProductUtil {
                 } else {
                     worldSize = "#";
                 }
-            }
         } else if (sn.matches(NEWREG)) {// after 2014
             String ts;
             ts = sn.substring(5, 8);
@@ -758,8 +947,8 @@ public class ProductUtil {
                 } else {
                     worldSize = "#";
                 }
-            } else { //shangyi
-                if (size.equals("01")) {
+            } else //shangyi
+             if (size.equals("01")) {
                     worldSize = "155/80A";
                 } else if (size.equals("02")) {
                     worldSize = "160/84A";
@@ -772,7 +961,6 @@ public class ProductUtil {
                 } else {
                     worldSize = "#";
                 }
-            }
         } else {    //0ld
             String ts;
             if (sn.length() == 9) {
@@ -795,8 +983,8 @@ public class ProductUtil {
                 } else {
                     worldSize = "#";
                 }
-            } else { //shangyi
-                if (size.equals("01")) {
+            } else //shangyi
+             if (size.equals("01")) {
                     worldSize = "155/80A";
                 } else if (size.equals("02")) {
                     worldSize = "160/84A";
@@ -809,7 +997,6 @@ public class ProductUtil {
                 } else {
                     worldSize = "#";
                 }
-            }
         }
 
         ///
