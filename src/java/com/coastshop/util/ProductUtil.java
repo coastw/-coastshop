@@ -194,8 +194,6 @@ public class ProductUtil {
                 type = "连体裤";
             } else if (Ts2015.equals("190")) {
                 type = "马夹";
-            } else if (Ts2015.equals("18")) {
-                type = "休闲裤";
             } else {
                 type = "#";
             }
@@ -250,8 +248,6 @@ public class ProductUtil {
                 type = "连体裤";
             } else if (newTs.equals("190")) {
                 type = "马夹";
-            } else if (newTs.equals("18")) {
-                type = "休闲裤";
             } else {
                 type = "#";
             }
@@ -321,31 +317,33 @@ public class ProductUtil {
         if (sn.matches(NEWREG2015)) {// after 2015
             String newTs;
             newTs = sn.substring(7, 10);
-            if (newTs.equals("190") || newTs.equals("110") || newTs.equals("070") || newTs.equals("160") || newTs.equals("120") || newTs.equals("071")
-                    || newTs.equals("150") || newTs.equals("161") || newTs.equals("040") || newTs.equals("050")
-                    || newTs.equals("060") || newTs.equals("030") || newTs.equals("031") || newTs.equals("100") || newTs.equals("101") || newTs.equals("102")) {
+            if (newTs.equals("030") || newTs.equals("031") || newTs.equals("040") || newTs.equals("050") || newTs.equals("060")
+                    || newTs.equals("070") || newTs.equals("071") || newTs.equals("100") || newTs.equals("101") || newTs.equals("110")
+                    || newTs.equals("120") || newTs.equals("121") || newTs.equals("122") || newTs.equals("150") || newTs.equals("160")
+                    || newTs.equals("161") || newTs.equals("190")) {
                 secondType = "女装上装";
             } else if (newTs.equals("080") || newTs.equals("081") || newTs.equals("170") || newTs.equals("180")) {
                 secondType = "女装裤子";
-            } else if (newTs.equals("090") || newTs.equals("091") || newTs.equals("020") || newTs.equals("021")) {
+            } else if (newTs.equals("090") || newTs.equals("091") || newTs.equals("020") || newTs.equals("021") || newTs.equals("102")) {
                 secondType = "裙装";
             } else {
-                secondType = "#";
+                secondType = "#" + newTs;
             }
             return secondType;
         } else if (sn.matches(NEWREG)) {// after 2014
             String newTs;
             newTs = sn.substring(5, 8);
-            if (newTs.equals("190") || newTs.equals("110") || newTs.equals("070") || newTs.equals("160") || newTs.equals("120") || newTs.equals("071")
-                    || newTs.equals("150") || newTs.equals("161") || newTs.equals("040") || newTs.equals("050")
-                    || newTs.equals("060") || newTs.equals("030") || newTs.equals("031") || newTs.equals("100") || newTs.equals("101") || newTs.equals("102")) {
+            if (newTs.equals("030") || newTs.equals("031") || newTs.equals("040") || newTs.equals("050") || newTs.equals("060")
+                    || newTs.equals("070") || newTs.equals("071") || newTs.equals("100") || newTs.equals("101") || newTs.equals("110")
+                    || newTs.equals("120") || newTs.equals("121") || newTs.equals("122") || newTs.equals("150") || newTs.equals("160")
+                    || newTs.equals("161") || newTs.equals("190")) {
                 secondType = "女装上装";
             } else if (newTs.equals("080") || newTs.equals("081") || newTs.equals("170") || newTs.equals("180")) {
                 secondType = "女装裤子";
-            } else if (newTs.equals("090") || newTs.equals("091") || newTs.equals("020") || newTs.equals("021")) {
+            } else if (newTs.equals("090") || newTs.equals("091") || newTs.equals("020") || newTs.equals("021") || newTs.equals("102")) {
                 secondType = "裙装";
             } else {
-                secondType = "#";
+                secondType = "#" + newTs;
             }
             return secondType;
         } else {    //0ld
@@ -387,123 +385,79 @@ public class ProductUtil {
     public static String getThirdType(String sn) {
         String thirdType;
         String ts;
-        if (sn.matches(NEWREG2015)) {//after 2015
+        if (sn.matches(NEWREG2015)) {//after 2015 15203AC020206
             ts = sn.substring(7, 10);
-            if (ts.equals("031")) {
-                thirdType = "T恤";
-            } else if (ts.equals("060")) {
-                thirdType = "衬衣";
-            } else if (ts.equals("120")) {
-                thirdType = "大衣";
-//            } else if (ts.equals("050") || ts.equals("030") || ts.equals("100") || ts.equals("101") || ts.equals("102")) {
-//                thirdType = "短款皮草";
-            } else if (ts.equals("110")) {
-                thirdType = "风衣";
-            } else if (ts.equals("190")) {
-                thirdType = "马夹";
-//            } else if (ts.equals("")) {
-//                thirdType = "马甲";
-            } else if (ts.equals("040") || ts.equals("050") || ts.equals("030") || ts.equals("100") || ts.equals("101") || ts.equals("102")) {
-                thirdType = "毛衣/针织衫";
-//            } else if (ts.equals("070") || ts.equals("071")) {
-//                thirdType = "棉衣/棉服";
-//            } else if (ts.equals("10")) {
-//                thirdType = "披肩";
-            } else if (ts.equals("160")) {
-                thirdType = "皮衣";
-            } else if (ts.equals("070") || ts.equals("071")) {
-                thirdType = "外套";
-//            } else if (ts.equals("090") || ts.equals("091")) {
-//                thirdType = "卫衣/绒衫";
-//            } else if (ts.equals("020") || ts.equals("021")) {
-//                thirdType = "西服";
-//            } else if (ts.equals("020") || ts.equals("021")) {
-//                thirdType = "小吊带/背心";
-//            } else if (ts.equals("020") || ts.equals("021")) {
-//                thirdType = "雪纺衫";
-            } else if (ts.equals("150")) {
-                thirdType = "羽绒服";
-            } else if (ts.equals("161")) {
-                thirdType = "中款皮草";
-            } else if (ts.equals("081")) {
+            if (ts.equals("081")) {
                 thirdType = "打底裤";
-//            } else if (ts.equals("020") || ts.equals("021")) {
-//                thirdType = "短裤";
             } else if (ts.equals("170")) {
                 thirdType = "牛仔裤";
             } else if (ts.equals("080") || ts.equals("180")) {
                 thirdType = "休闲裤";
-//            } else if (ts.equals("020") || ts.equals("021")) {
-//                thirdType = "长裤";
             } else if (ts.equals("090") || ts.equals("091")) {
                 thirdType = "半身裙";
-//            } else if (ts.equals("020") || ts.equals("021")) {
-//                thirdType = "吊带裙";
-//            } else if (ts.equals("020") || ts.equals("021")) {
-//                thirdType = "礼服裙";
-            } else if (ts.equals("020") || ts.equals("021")) {
+            } else if (ts.equals("020") || ts.equals("021") || ts.equals("102")) {
                 thirdType = "连衣裙";
+            } else if (ts.equals("031")) {
+                thirdType = "T恤";
+            } else if (ts.equals("040") || ts.equals("060")) {
+                thirdType = "衬衣";
+            } else if (ts.equals("120") || ts.equals("121") || ts.equals("122")) {
+                thirdType = "大衣";
+            } else if (ts.equals("110")) {
+                thirdType = "风衣";
+            } else if (ts.equals("190")) {
+                thirdType = "马夹";
+            } else if (ts.equals("030") || ts.equals("100")) {
+                thirdType = "毛衣/针织衫";
+            } else if (ts.equals("160")) {
+                thirdType = "皮衣";
+            } else if (ts.equals("070") || ts.equals("071") || ts.equals("101")) {
+                thirdType = "外套";
+            } else if (ts.equals("050")) {
+                thirdType = "雪纺衫";
+            } else if (ts.equals("150")) {
+                thirdType = "羽绒服";
+            } else if (ts.equals("161")) {
+                thirdType = "中款皮草";
             } else {
-                thirdType = "#";
+                thirdType = "#" + ts;
             }
         } else if (sn.matches(NEWREG)) {//after 2014
             ts = sn.substring(5, 8);
-            if (ts.equals("031")) {
-                thirdType = "T恤";
-            } else if (ts.equals("060")) {
-                thirdType = "衬衣";
-            } else if (ts.equals("120")) {
-                thirdType = "大衣";
-//            } else if (ts.equals("050") || ts.equals("030") || ts.equals("100") || ts.equals("101") || ts.equals("102")) {
-//                thirdType = "短款皮草";
-            } else if (ts.equals("110")) {
-                thirdType = "风衣";
-            } else if (ts.equals("190")) {
-                thirdType = "马夹";
-//            } else if (ts.equals("")) {
-//                thirdType = "马甲";
-            } else if (ts.equals("040") || ts.equals("050") || ts.equals("030") || ts.equals("100") || ts.equals("101") || ts.equals("102")) {
-                thirdType = "毛衣/针织衫";
-//            } else if (ts.equals("070") || ts.equals("071")) {
-//                thirdType = "棉衣/棉服";
-//            } else if (ts.equals("10")) {
-//                thirdType = "披肩";
-            } else if (ts.equals("160")) {
-                thirdType = "皮衣";
-            } else if (ts.equals("070") || ts.equals("071")) {
-                thirdType = "外套";
-//            } else if (ts.equals("090") || ts.equals("091")) {
-//                thirdType = "卫衣/绒衫";
-//            } else if (ts.equals("020") || ts.equals("021")) {
-//                thirdType = "西服";
-//            } else if (ts.equals("020") || ts.equals("021")) {
-//                thirdType = "小吊带/背心";
-//            } else if (ts.equals("020") || ts.equals("021")) {
-//                thirdType = "雪纺衫";
-            } else if (ts.equals("150")) {
-                thirdType = "羽绒服";
-            } else if (ts.equals("161")) {
-                thirdType = "中款皮草";
-            } else if (ts.equals("081")) {
+            if (ts.equals("081")) {
                 thirdType = "打底裤";
-//            } else if (ts.equals("020") || ts.equals("021")) {
-//                thirdType = "短裤";
             } else if (ts.equals("170")) {
                 thirdType = "牛仔裤";
             } else if (ts.equals("080") || ts.equals("180")) {
                 thirdType = "休闲裤";
-//            } else if (ts.equals("020") || ts.equals("021")) {
-//                thirdType = "长裤";
             } else if (ts.equals("090") || ts.equals("091")) {
                 thirdType = "半身裙";
-//            } else if (ts.equals("020") || ts.equals("021")) {
-//                thirdType = "吊带裙";
-//            } else if (ts.equals("020") || ts.equals("021")) {
-//                thirdType = "礼服裙";
-            } else if (ts.equals("020") || ts.equals("021")) {
+            } else if (ts.equals("020") || ts.equals("021") || ts.equals("102")) {
                 thirdType = "连衣裙";
+            } else if (ts.equals("031")) {
+                thirdType = "T恤";
+            } else if (ts.equals("040") || ts.equals("060")) {
+                thirdType = "衬衣";
+            } else if (ts.equals("120") || ts.equals("121") || ts.equals("122")) {
+                thirdType = "大衣";
+            } else if (ts.equals("110")) {
+                thirdType = "风衣";
+            } else if (ts.equals("190")) {
+                thirdType = "马夹";
+            } else if (ts.equals("030") || ts.equals("100")) {
+                thirdType = "毛衣/针织衫";
+            } else if (ts.equals("160")) {
+                thirdType = "皮衣";
+            } else if (ts.equals("070") || ts.equals("071") || ts.equals("101")) {
+                thirdType = "外套";
+            } else if (ts.equals("050")) {
+                thirdType = "雪纺衫";
+            } else if (ts.equals("150")) {
+                thirdType = "羽绒服";
+            } else if (ts.equals("161")) {
+                thirdType = "中款皮草";
             } else {
-                thirdType = "#";
+                thirdType = "#" + ts;
             }
         } else {//0ld
             //判断位数
@@ -809,7 +763,8 @@ public class ProductUtil {
                     localSize = "#";
                 }
             } else //shangyi
-             if (size.equals("01")) {
+            {
+                if (size.equals("01")) {
                     localSize = "S";
                 } else if (size.equals("02")) {
                     localSize = "M";
@@ -822,6 +777,7 @@ public class ProductUtil {
                 } else {
                     localSize = "#";
                 }
+            }
 
         } else if (sn.matches(NEWREG)) {// after 2014
             String ts;
@@ -841,7 +797,8 @@ public class ProductUtil {
                     localSize = "#";
                 }
             } else //shangyi
-             if (size.equals("01")) {
+            {
+                if (size.equals("01")) {
                     localSize = "S";
                 } else if (size.equals("02")) {
                     localSize = "M";
@@ -854,6 +811,7 @@ public class ProductUtil {
                 } else {
                     localSize = "#";
                 }
+            }
         } else {    //0ld
             String ts;
             if (sn.length() == 9) {
@@ -877,7 +835,8 @@ public class ProductUtil {
                     localSize = "#";
                 }
             } else //shangyi
-             if (size.equals("01")) {
+            {
+                if (size.equals("01")) {
                     localSize = "S";
                 } else if (size.equals("02")) {
                     localSize = "M";
@@ -890,6 +849,7 @@ public class ProductUtil {
                 } else {
                     localSize = "#";
                 }
+            }
         }
 
         return localSize;
@@ -917,7 +877,8 @@ public class ProductUtil {
                     worldSize = "#";
                 }
             } else //shangyi
-             if (size.equals("01")) {
+            {
+                if (size.equals("01")) {
                     worldSize = "155/80A";
                 } else if (size.equals("02")) {
                     worldSize = "160/84A";
@@ -930,6 +891,7 @@ public class ProductUtil {
                 } else {
                     worldSize = "#";
                 }
+            }
         } else if (sn.matches(NEWREG)) {// after 2014
             String ts;
             ts = sn.substring(5, 8);
@@ -948,7 +910,8 @@ public class ProductUtil {
                     worldSize = "#";
                 }
             } else //shangyi
-             if (size.equals("01")) {
+            {
+                if (size.equals("01")) {
                     worldSize = "155/80A";
                 } else if (size.equals("02")) {
                     worldSize = "160/84A";
@@ -961,6 +924,7 @@ public class ProductUtil {
                 } else {
                     worldSize = "#";
                 }
+            }
         } else {    //0ld
             String ts;
             if (sn.length() == 9) {
@@ -984,7 +948,8 @@ public class ProductUtil {
                     worldSize = "#";
                 }
             } else //shangyi
-             if (size.equals("01")) {
+            {
+                if (size.equals("01")) {
                     worldSize = "155/80A";
                 } else if (size.equals("02")) {
                     worldSize = "160/84A";
@@ -997,6 +962,7 @@ public class ProductUtil {
                 } else {
                     worldSize = "#";
                 }
+            }
         }
 
         ///
