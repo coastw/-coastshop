@@ -13,13 +13,13 @@ public class ProductUtil {
     //122102052
     //133E1 100016 020 02
     //1341F 020217 020 02
-    public static final String NAMEREG = "^[1]{1}[0-9]{1}[1-8]{1}[0-9a-zA-Z]{2}[0-9]{6}$";  //133 134
+    public static final String NAMEREG = "^[1]{1}[0-9]{1}[1-8]{1}[0-9a-zA-Z]{2}[0-9]{6}$";  //133 134 only sn
     //public static final String NEWREG = "^[1]{1}[0-9]{1}[1-8]{1}[1-9]{1}[a-zA-Z]{1}[0-9]{6}$";  //从134往后 ，不包括133
-    public static final String SNREGEX = "^[1]{1}[0-9]{1}[1-8]{1}[0-9]{1}[0-9]{5}$|^[1]{1}[0-9]{1}[1-8]{1}[0-9a-zA-Z]{2}[0-9]{6}$";
+    public static final String SNREGEX = "^[1]{1}[0-9]{1}[1-8]{1}[0-9]{1}[0-9]{5}$|^[1]{1}[0-9]{1}[1-8]{1}[0-9a-zA-Z]{2}[0-9]{6}$"; //only sn
     //public static final String SNREGEX = "^[1]{1}[0-9]{1}[1-8]{1}[0-9]{1}[0-9]{5}$|^[1]{1}[0-9]{1}[1-8]{1}[a-zA-Z]{1}[0-9]{7}$|^[1]{1}[0-9]{1}[1-8]{1}[1-9]{1}[a-zA-Z]{1}[0-9]{6}$";
     public static final String COLORREGEX = "^[0-9]{3}$";
     public static final String SIZEREGEX = "^[0][1-5]$";
-//    public static final String SNOREGEX = "(^[1]{1}[0-9]{1}[1-8]{1}[0-9]{1}[0-9]{5}|^[1]{1}[0-9]{1}[1-8]{1}[a-zA-Z]{1}[0-9]{7}|^[1]{1}[0-9]{1}[1-8]{1}[1-9]{1}[a-zA-Z]{1}[0-9]{6})[0-9]{3}[0][1-5]$";
+    public static final String SNOREGEX = "(^[1]{1}[0-9]{1}[1-8]{1}[0-9]{1}[0-9]{5}|^[1]{1}[0-9]{1}[1-8]{1}[0-9a-zA-Z]{2}[0-9]{6})[0-9]{3}[0][1-5]$"; //sn color size
 
     //15101AE020012
     //15101AE020012
