@@ -1054,7 +1054,7 @@ public class ProductUtil {
                     } else if (size.equals("03")) {
                         worldSize = "84cm";
                     } else if (size.equals("04")) {
-                        worldSize = "88cmA";
+                        worldSize = "88cm";
                     } else if (size.equals("05")) {
                         worldSize = "92A";
                     } else {
