@@ -102,28 +102,40 @@ public class ProductUtil {
     public static String getYear(String sn) {
         String year;
         String ys = sn.substring(0, 2);
-        if (ys.equals("10")) {
-            year = "2010";
-        } else if (ys.equals("11")) {
-            year = "2011";
-        } else if (ys.equals("12")) {
-            year = "2012";
-        } else if (ys.equals("13")) {
-            year = "2013";
-        } else if (ys.equals("14")) {
-            year = "2014";
-        } else if (ys.equals("15")) {
-            year = "2015";
-        } else if (ys.equals("16")) {
-            year = "2016";
-        } else if (ys.equals("17")) {
-            year = "2017";
-        } else if (ys.equals("18")) {
-            year = "2018";
-        } else if (ys.equals("19")) {
-            year = "2009";
-        } else {
-            year = "#";
+        switch (ys) {
+            case "10":
+                year = "2010";
+                break;
+            case "11":
+                year = "2011";
+                break;
+            case "12":
+                year = "2012";
+                break;
+            case "13":
+                year = "2013";
+                break;
+            case "14":
+                year = "2014";
+                break;
+            case "15":
+                year = "2015";
+                break;
+            case "16":
+                year = "2016";
+                break;
+            case "17":
+                year = "2017";
+                break;
+            case "18":
+                year = "2018";
+                break;
+            case "19":
+                year = "2009";
+                break;
+            default:
+                year = "#"+ys;
+                break;
         }
         return year;
     }
@@ -131,181 +143,270 @@ public class ProductUtil {
     public static String getSeason(String sn) {
         String season;
         String ss = sn.substring(2, 3);
-        if (ss.equals("1") || ss.equals("5")) {
-            season = "春";
-        } else if (ss.equals("2") || ss.equals("6")) {
-            season = "夏";
-        } else if (ss.equals("3") || ss.equals("7")) {
-            season = "秋";
-        } else if (ss.equals("4") || ss.equals("8")) {
-            season = "冬";
-        } else {
-            season = "#";
+        switch (ss) {
+            case "1":
+            case "5":
+                season = "春";
+                break;
+            case "2":
+            case "6":
+                season = "夏";
+                break;
+            case "3":
+            case "7":
+                season = "秋";
+                break;
+            case "4":
+            case "8":
+                season = "冬";
+                break;
+            default:
+                season = "#"+ss;
+                break;
         }
         return season;
     }
 
     public static String getType(String sn) {
-        String type = "#";
+        String type;
         if (sn.matches(NAMEREG2015)) {//after 2015
             String Ts2015 = sn.substring(7, 10);
-            if (Ts2015.equals("010")) {
-                type = "套装";
-            } else if (Ts2015.equals("020")) {
-                type = "梭织连衣裙";
-            } else if (Ts2015.equals("021")) {
-                type = "针织连衣裙";
-            } else if (Ts2015.equals("030")) {
-                type = "针织上衣";
-            } else if (Ts2015.equals("031")) {
-                type = "T恤";
-            } else if (Ts2015.equals("040")) {
-                type = "真丝上衣";
-            } else if (Ts2015.equals("050")) {
-                type = "梭织上衣";
-            } else if (Ts2015.equals("060")) {
-                type = "衬衫";
-            } else if (Ts2015.equals("070")) {
-                type = "薄外套";
-            } else if (Ts2015.equals("071")) {
-                type = "厚外套";
-            } else if (Ts2015.equals("080")) {
-                type = "梭织裤";
-            } else if (Ts2015.equals("081")) {
-                type = "针织裤";
-            } else if (Ts2015.equals("090")) {
-                type = "梭织裙";
-            } else if (Ts2015.equals("091")) {
-                type = "针织裙";
-            } else if (Ts2015.equals("100")) {
-                type = "毛织衫";
-            } else if (Ts2015.equals("101")) {
-                type = "毛织外套";
-            } else if (Ts2015.equals("102")) {
-                type = "毛织连衣裙";
-            } else if (Ts2015.equals("110")) {
-                type = "风衣";
-            } else if (Ts2015.equals("120") || Ts2015.equals("121") || Ts2015.equals("122")) {
-                type = "大衣";
-            } else if (Ts2015.equals("150")) {
-                type = "羽绒服";
-            } else if (Ts2015.equals("160")) {
-                type = "皮衣";
-            } else if (Ts2015.equals("161")) {
-                type = "皮草";
-            } else if (Ts2015.equals("170")) {
-                type = "牛仔裤";
-            } else if (Ts2015.equals("180")) {
-                type = "连体裤";
-            } else if (Ts2015.equals("190")) {
-                type = "马夹";
-            } else if (Ts2015.equals("890")) {
-                type = "内衣";
-            } else {
-                type = "#";
+            switch (Ts2015) {
+                case "010":
+                    type = "套装";
+                    break;
+                case "020":
+                    type = "梭织连衣裙";
+                    break;
+                case "021":
+                    type = "针织连衣裙";
+                    break;
+                case "030":
+                    type = "针织上衣";
+                    break;
+                case "031":
+                    type = "T恤";
+                    break;
+                case "040":
+                    type = "真丝上衣";
+                    break;
+                case "050":
+                    type = "梭织上衣";
+                    break;
+                case "060":
+                    type = "衬衫";
+                    break;
+                case "070":
+                    type = "薄外套";
+                    break;
+                case "071":
+                    type = "厚外套";
+                    break;
+                case "080":
+                    type = "梭织裤";
+                    break;
+                case "081":
+                    type = "针织裤";
+                    break;
+                case "090":
+                    type = "梭织裙";
+                    break;
+                case "091":
+                    type = "针织裙";
+                    break;
+                case "100":
+                    type = "毛织衫";
+                    break;
+                case "101":
+                    type = "毛织外套";
+                    break;
+                case "102":
+                    type = "毛织连衣裙";
+                    break;
+                case "110":
+                    type = "风衣";
+                    break;
+                case "120":
+                case "121":
+                case "122":
+                    type = "大衣";
+                    break;
+                case "150":
+                    type = "羽绒服";
+                    break;
+                case "160":
+                    type = "皮衣";
+                    break;
+                case "161":
+                    type = "皮草";
+                    break;
+                case "170":
+                    type = "牛仔裤";
+                    break;
+                case "180":
+                    type = "连体裤";
+                    break;
+                case "190":
+                    type = "马夹";
+                    break;
+                case "890":
+                    type = "内衣";
+                    break;
+                default:
+                    type = "#"+Ts2015;
+                    break;
             }
             return type;
         } else if (sn.matches(NAMEREG)) {// after 134
             String newTs = sn.substring(5, 8);
-            if (newTs.equals("010")) {
-                type = "套装";
-            } else if (newTs.equals("020")) {
-                type = "梭织连衣裙";
-            } else if (newTs.equals("021")) {
-                type = "针织连衣裙";
-            } else if (newTs.equals("030")) {
-                type = "针织上衣";
-            } else if (newTs.equals("031")) {
-                type = "T恤";
-            } else if (newTs.equals("040")) {
-                type = "真丝上衣";
-            } else if (newTs.equals("050")) {
-                type = "梭织上衣";
-            } else if (newTs.equals("060")) {
-                type = "衬衫";
-            } else if (newTs.equals("070")) {
-                type = "薄外套";
-            } else if (newTs.equals("071")) {
-                type = "厚外套";
-            } else if (newTs.equals("080")) {
-                type = "梭织裤";
-            } else if (newTs.equals("081")) {
-                type = "针织裤";
-            } else if (newTs.equals("090")) {
-                type = "梭织裙";
-            } else if (newTs.equals("091")) {
-                type = "针织裙";
-            } else if (newTs.equals("100")) {
-                type = "毛织衫";
-            } else if (newTs.equals("101")) {
-                type = "毛织外套";
-            } else if (newTs.equals("102")) {
-                type = "毛织连衣裙";
-            } else if (newTs.equals("110")) {
-                type = "风衣";
-            } else if (newTs.equals("120") || newTs.equals("121") || newTs.equals("122")) {
-                type = "大衣";
-            } else if (newTs.equals("150")) {
-                type = "羽绒服";
-            } else if (newTs.equals("160")) {
-                type = "皮衣";
-            } else if (newTs.equals("161")) {
-                type = "皮草";
-            } else if (newTs.equals("170")) {
-                type = "牛仔裤";
-            } else if (newTs.equals("180")) {
-                type = "连体裤";
-            } else if (newTs.equals("190")) {
-                type = "马夹";
-            } else if (newTs.equals("890")) {
-                type = "内衣";
-            } else {
-                type = "#";
+            switch (newTs) {
+                case "010":
+                    type = "套装";
+                    break;
+                case "020":
+                    type = "梭织连衣裙";
+                    break;
+                case "021":
+                    type = "针织连衣裙";
+                    break;
+                case "030":
+                    type = "针织上衣";
+                    break;
+                case "031":
+                    type = "T恤";
+                    break;
+                case "040":
+                    type = "真丝上衣";
+                    break;
+                case "050":
+                    type = "梭织上衣";
+                    break;
+                case "060":
+                    type = "衬衫";
+                    break;
+                case "070":
+                    type = "薄外套";
+                    break;
+                case "071":
+                    type = "厚外套";
+                    break;
+                case "080":
+                    type = "梭织裤";
+                    break;
+                case "081":
+                    type = "针织裤";
+                    break;
+                case "090":
+                    type = "梭织裙";
+                    break;
+                case "091":
+                    type = "针织裙";
+                    break;
+                case "100":
+                    type = "毛织衫";
+                    break;
+                case "101":
+                    type = "毛织外套";
+                    break;
+                case "102":
+                    type = "毛织连衣裙";
+                    break;
+                case "110":
+                    type = "风衣";
+                    break;
+                case "120":
+                case "121":
+                case "122":
+                    type = "大衣";
+                    break;
+                case "150":
+                    type = "羽绒服";
+                    break;
+                case "160":
+                    type = "皮衣";
+                    break;
+                case "161":
+                    type = "皮草";
+                    break;
+                case "170":
+                    type = "牛仔裤";
+                    break;
+                case "180":
+                    type = "连体裤";
+                    break;
+                case "190":
+                    type = "马夹";
+                    break;
+                case "890":
+                    type = "内衣";
+                    break;
+                default:
+                    type = "#"+newTs;
+                    break;
             }
             return type;
         } else { //0ld
-            String ts = null;
+            String ts;
             if (sn.length() == 9) {
                 ts = sn.substring(4, 6);
             } else {
                 ts = sn.substring(5, 7);
             }
-            if (ts.equals("02")) {
-                type = "连衣裙";
-            } else if (ts.equals("03")) {
-                type = "梭织上衣";
-            } else if (ts.equals("04")) {
-                type = "上衣";
-            } else if (ts.equals("05")) {
-                type = "针织上衣";
-            } else if (ts.equals("06")) {
-                type = "衬衫";
-            } else if (ts.equals("07")) {
-                type = "外套";
-            } else if (ts.equals("08")) {
-                type = "裤子";
-            } else if (ts.equals("09")) {
-                type = "裙子";
-            } else if (ts.equals("10")) {
-                type = "毛衫";
-            } else if (ts.equals("11")) {
-                type = "风衣";
-            } else if (ts.equals("12")) {
-                type = "长大衣";
-            } else if (ts.equals("13")) {
-                type = "短大衣";
-            } else if (ts.equals("14")) {
-                type = "棉衣";
-            } else if (ts.equals("15")) {
-                type = "羽绒服";
-            } else if (ts.equals("16")) {
-                type = "皮衣";
-            } else if (ts.equals("17")) {
-                type = "牛仔裤";
-            } else if (ts.equals("18")) {
-                type = "休闲裤";
-            } else {
-                type = "#";
+            switch (ts) {
+                case "02":
+                    type = "连衣裙";
+                    break;
+                case "03":
+                    type = "梭织上衣";
+                    break;
+                case "04":
+                    type = "上衣";
+                    break;
+                case "05":
+                    type = "针织上衣";
+                    break;
+                case "06":
+                    type = "衬衫";
+                    break;
+                case "07":
+                    type = "外套";
+                    break;
+                case "08":
+                    type = "裤子";
+                    break;
+                case "09":
+                    type = "裙子";
+                    break;
+                case "10":
+                    type = "毛衫";
+                    break;
+                case "11":
+                    type = "风衣";
+                    break;
+                case "12":
+                    type = "长大衣";
+                    break;
+                case "13":
+                    type = "短大衣";
+                    break;
+                case "14":
+                    type = "棉衣";
+                    break;
+                case "15":
+                    type = "羽绒服";
+                    break;
+                case "16":
+                    type = "皮衣";
+                    break;
+                case "17":
+                    type = "牛仔裤";
+                    break;
+                case "18":
+                    type = "休闲裤";
+                    break;
+                default:
+                    type = "#"+ts;
+                    break;
             }
             return type;
         }
@@ -328,33 +429,87 @@ public class ProductUtil {
         if (sn.matches(NAMEREG2015)) {// after 2015
             String newTs;
             newTs = sn.substring(7, 10);
-            if (newTs.equals("030") || newTs.equals("031") || newTs.equals("040") || newTs.equals("050") || newTs.equals("060")
-                    || newTs.equals("070") || newTs.equals("071") || newTs.equals("100") || newTs.equals("101") || newTs.equals("110")
-                    || newTs.equals("120") || newTs.equals("121") || newTs.equals("122") || newTs.equals("150") || newTs.equals("160")
-                    || newTs.equals("161") || newTs.equals("190") || newTs.equals("010") || newTs.equals("890")) {
-                secondType = "女装上装";
-            } else if (newTs.equals("080") || newTs.equals("081") || newTs.equals("170") || newTs.equals("180")) {
-                secondType = "女装裤子";
-            } else if (newTs.equals("090") || newTs.equals("091") || newTs.equals("020") || newTs.equals("021") || newTs.equals("102")) {
-                secondType = "裙装";
-            } else {
-                secondType = "#" + newTs;
+            switch (newTs) {
+                case "030":
+                case "031":
+                case "040":
+                case "050":
+                case "060":
+                case "070":
+                case "071":
+                case "100":
+                case "101":
+                case "110":
+                case "120":
+                case "121":
+                case "122":
+                case "150":
+                case "160":
+                case "161":
+                case "190":
+                case "010":
+                case "890":
+                    secondType = "女装上装";
+                    break;
+                case "080":
+                case "081":
+                case "170":
+                case "180":
+                    secondType = "女装裤子";
+                    break;
+                case "090":
+                case "091":
+                case "020":
+                case "021":
+                case "102":
+                    secondType = "裙装";
+                    break;
+                default:
+                    secondType = "#" + newTs;
+                    break;
             }
             return secondType;
         } else if (sn.matches(NAMEREG)) {// after 134
             String newTs;
             newTs = sn.substring(5, 8);
-            if (newTs.equals("030") || newTs.equals("031") || newTs.equals("040") || newTs.equals("050") || newTs.equals("060")
-                    || newTs.equals("070") || newTs.equals("071") || newTs.equals("100") || newTs.equals("101") || newTs.equals("110")
-                    || newTs.equals("120") || newTs.equals("121") || newTs.equals("122") || newTs.equals("150") || newTs.equals("160")
-                    || newTs.equals("161") || newTs.equals("190") || newTs.equals("010") || newTs.equals("890")) {
-                secondType = "女装上装";
-            } else if (newTs.equals("080") || newTs.equals("081") || newTs.equals("170") || newTs.equals("180")) {
-                secondType = "女装裤子";
-            } else if (newTs.equals("090") || newTs.equals("091") || newTs.equals("020") || newTs.equals("021") || newTs.equals("102")) {
-                secondType = "裙装";
-            } else {
-                secondType = "#" + newTs;
+            switch (newTs) {
+                case "030":
+                case "031":
+                case "040":
+                case "050":
+                case "060":
+                case "070":
+                case "071":
+                case "100":
+                case "101":
+                case "110":
+                case "120":
+                case "121":
+                case "122":
+                case "150":
+                case "160":
+                case "161":
+                case "190":
+                case "010":
+                case "890":
+                    secondType = "女装上装";
+                    break;
+                case "080":
+                case "081":
+                case "170":
+                case "180":
+                    secondType = "女装裤子";
+                    break;
+                case "090":
+                case "091":
+                case "020":
+                case "021":
+                case "102":
+                    secondType = "裙装";
+                    break;
+                default:
+                    secondType = "#" + newTs;
+                    break;
             }
             return secondType;
         } else {    //0ld
@@ -364,14 +519,33 @@ public class ProductUtil {
             } else {
                 ts = sn.substring(5, 7);
             }
-            if (ts.equals("03") || ts.equals("05") || ts.equals("06") || ts.equals("07") || ts.equals("10") || ts.equals("11") || ts.equals("12") || ts.equals("13") || ts.equals("14") || ts.equals("15") || ts.equals("16") || ts.equals("04")) {
-                secondType = "女装上装";
-            } else if (ts.equals("08") || ts.equals("17") || ts.equals("18")) {
-                secondType = "女装裤子";
-            } else if (ts.equals("02") || ts.equals("09")) {
-                secondType = "裙装";
-            } else {
-                secondType = "#";
+            switch (ts) {
+                case "03":
+                case "05":
+                case "06":
+                case "07":
+                case "10":
+                case "11":
+                case "12":
+                case "13":
+                case "14":
+                case "15":
+                case "16":
+                case "04":
+                    secondType = "女装上装";
+                    break;
+                case "08":
+                case "17":
+                case "18":
+                    secondType = "女装裤子";
+                    break;
+                case "02":
+                case "09":
+                    secondType = "裙装";
+                    break;
+                default:
+                    secondType = "#"+ts;
+                    break;
             }
             return secondType;
         }
@@ -398,81 +572,141 @@ public class ProductUtil {
         String ts;
         if (sn.matches(NAMEREG2015)) {//after 2015 15203AC020206
             ts = sn.substring(7, 10);
-            if (ts.equals("081")) {
-                thirdType = "打底裤";
-            } else if (ts.equals("170")) {
-                thirdType = "牛仔裤";
-            } else if (ts.equals("080") || ts.equals("180")) {
-                thirdType = "休闲裤";
-            } else if (ts.equals("090") || ts.equals("091")) {
-                thirdType = "半身裙";
-            } else if (ts.equals("020") || ts.equals("021") || ts.equals("102")) {
-                thirdType = "连衣裙";
-            } else if (ts.equals("031")) {
-                thirdType = "T恤";
-            } else if (ts.equals("040") || ts.equals("060")) {
-                thirdType = "衬衣";
-            } else if (ts.equals("120") || ts.equals("121") || ts.equals("122")) {
-                thirdType = "大衣";
-            } else if (ts.equals("110")) {
-                thirdType = "风衣";
-            } else if (ts.equals("190")) {
-                thirdType = "马夹";
-            } else if (ts.equals("030") || ts.equals("100")) {
-                thirdType = "毛衣/针织衫";
-            } else if (ts.equals("160")) {
-                thirdType = "皮衣";
-            } else if (ts.equals("070") || ts.equals("071") || ts.equals("101") || ts.equals("010")) {
-                thirdType = "外套";
-            } else if (ts.equals("050")) {
-                thirdType = "雪纺衫";
-            } else if (ts.equals("150")) {
-                thirdType = "羽绒服";
-            } else if (ts.equals("161")) {
-                thirdType = "中款皮草";
-            } else if (ts.equals("890")) {
-                thirdType = "小吊带/背心";
-            } else {
-                thirdType = "#" + ts;
+            switch (ts) {
+                case "081":
+                    thirdType = "打底裤";
+                    break;
+                case "170":
+                    thirdType = "牛仔裤";
+                    break;
+                case "080":
+                case "180":
+                    thirdType = "休闲裤";
+                    break;
+                case "090":
+                case "091":
+                    thirdType = "半身裙";
+                    break;
+                case "020":
+                case "021":
+                case "102":
+                    thirdType = "连衣裙";
+                    break;
+                case "031":
+                    thirdType = "T恤";
+                    break;
+                case "040":
+                case "060":
+                    thirdType = "衬衣";
+                    break;
+                case "120":
+                case "121":
+                case "122":
+                    thirdType = "大衣";
+                    break;
+                case "110":
+                    thirdType = "风衣";
+                    break;
+                case "190":
+                    thirdType = "马夹";
+                    break;
+                case "030":
+                case "100":
+                    thirdType = "毛衣/针织衫";
+                    break;
+                case "160":
+                    thirdType = "皮衣";
+                    break;
+                case "070":
+                case "071":
+                case "101":
+                case "010":
+                    thirdType = "外套";
+                    break;
+                case "050":
+                    thirdType = "雪纺衫";
+                    break;
+                case "150":
+                    thirdType = "羽绒服";
+                    break;
+                case "161":
+                    thirdType = "中款皮草";
+                    break;
+                case "890":
+                    thirdType = "小吊带/背心";
+                    break;
+                default:
+                    thirdType = "#" + ts;
+                    break;
             }
         } else if (sn.matches(NAMEREG)) {//after 134
             ts = sn.substring(5, 8);
-            if (ts.equals("081")) {
-                thirdType = "打底裤";
-            } else if (ts.equals("170")) {
-                thirdType = "牛仔裤";
-            } else if (ts.equals("080") || ts.equals("180")) {
-                thirdType = "休闲裤";
-            } else if (ts.equals("090") || ts.equals("091")) {
-                thirdType = "半身裙";
-            } else if (ts.equals("020") || ts.equals("021") || ts.equals("102")) {
-                thirdType = "连衣裙";
-            } else if (ts.equals("031")) {
-                thirdType = "T恤";
-            } else if (ts.equals("040") || ts.equals("060")) {
-                thirdType = "衬衣";
-            } else if (ts.equals("120") || ts.equals("121") || ts.equals("122")) {
-                thirdType = "大衣";
-            } else if (ts.equals("110")) {
-                thirdType = "风衣";
-            } else if (ts.equals("190")) {
-                thirdType = "马夹";
-            } else if (ts.equals("030") || ts.equals("100")) {
-                thirdType = "毛衣/针织衫";
-            } else if (ts.equals("160")) {
-                thirdType = "皮衣";
-            } else if (ts.equals("070") || ts.equals("071") || ts.equals("101") || ts.equals("010")) {
-                thirdType = "外套";
-            } else if (ts.equals("050")) {
-                thirdType = "雪纺衫";
-            } else if (ts.equals("150")) {
-                thirdType = "羽绒服";
-            } else if (ts.equals("161")) {
-                thirdType = "中款皮草";
-            } else if (ts.equals("890")) {
-                thirdType = "小吊带/背心";
-            } else {
-                thirdType = "#" + ts;
+            switch (ts) {
+                case "081":
+                    thirdType = "打底裤";
+                    break;
+                case "170":
+                    thirdType = "牛仔裤";
+                    break;
+                case "080":
+                case "180":
+                    thirdType = "休闲裤";
+                    break;
+                case "090":
+                case "091":
+                    thirdType = "半身裙";
+                    break;
+                case "020":
+                case "021":
+                case "102":
+                    thirdType = "连衣裙";
+                    break;
+                case "031":
+                    thirdType = "T恤";
+                    break;
+                case "040":
+                case "060":
+                    thirdType = "衬衣";
+                    break;
+                case "120":
+                case "121":
+                case "122":
+                    thirdType = "大衣";
+                    break;
+                case "110":
+                    thirdType = "风衣";
+                    break;
+                case "190":
+                    thirdType = "马夹";
+                    break;
+                case "030":
+                case "100":
+                    thirdType = "毛衣/针织衫";
+                    break;
+                case "160":
+                    thirdType = "皮衣";
+                    break;
+                case "070":
+                case "071":
+                case "101":
+                case "010":
+                    thirdType = "外套";
+                    break;
+                case "050":
+                    thirdType = "雪纺衫";
+                    break;
+                case "150":
+                    thirdType = "羽绒服";
+                    break;
+                case "161":
+                    thirdType = "中款皮草";
+                    break;
+                case "890":
+                    thirdType = "小吊带/背心";
+                    break;
+                default:
+                    thirdType = "#" + ts;
+                    break;
             }
         } else {//0ld
             //判断位数
@@ -481,34 +715,53 @@ public class ProductUtil {
             } else {
                 ts = sn.substring(5, 7);
             }
-            if (ts.equals("06")) {
-                thirdType = "衬衣";
-            } else if (ts.equals("12") || ts.equals("13")) {
-                thirdType = "大衣";
-            } else if (ts.equals("11")) {
-                thirdType = "风衣";
-            } else if (ts.equals("03") || ts.equals("05")) {
-                thirdType = "毛衣/针织衫";
-            } else if (ts.equals("04")) {
-                thirdType = "雪纺衫";
-            } else if (ts.equals("14")) {
-                thirdType = "棉衣/棉服";
-            } else if (ts.equals("16")) {
-                thirdType = "皮衣";
-            } else if (ts.equals("07")) {
-                thirdType = "外套";
-            } else if (ts.equals("10")) {
-                thirdType = "卫衣/绒衫";
-            } else if (ts.equals("15")) {
-                thirdType = "羽绒服";
-            } else if (ts.equals("08") || ts.equals("17") || ts.equals("18")) {
-                thirdType = "休闲裤";
-            } else if (ts.equals("09")) {
-                thirdType = "半身裙";
-            } else if (ts.equals("02")) {
-                thirdType = "连衣裙";
-            } else {
-                thirdType = "#";
+            switch (ts) {
+                case "06":
+                    thirdType = "衬衣";
+                    break;
+                case "12":
+                case "13":
+                    thirdType = "大衣";
+                    break;
+                case "11":
+                    thirdType = "风衣";
+                    break;
+                case "03":
+                case "05":
+                    thirdType = "毛衣/针织衫";
+                    break;
+                case "04":
+                    thirdType = "雪纺衫";
+                    break;
+                case "14":
+                    thirdType = "棉衣/棉服";
+                    break;
+                case "16":
+                    thirdType = "皮衣";
+                    break;
+                case "07":
+                    thirdType = "外套";
+                    break;
+                case "10":
+                    thirdType = "卫衣/绒衫";
+                    break;
+                case "15":
+                    thirdType = "羽绒服";
+                    break;
+                case "08":
+                case "17":
+                case "18":
+                    thirdType = "休闲裤";
+                    break;
+                case "09":
+                    thirdType = "半身裙";
+                    break;
+                case "02":
+                    thirdType = "连衣裙";
+                    break;
+                default:
+                    thirdType = "#";
+                    break;
             }
         }
         return thirdType;
@@ -517,12 +770,22 @@ public class ProductUtil {
     public static String getFitSeason(String sn) {
         String fitSeason;
         String ss = sn.substring(2, 3);
-        if (ss.equals("1") || ss.equals("5") || ss.equals("2") || ss.equals("6")) {
-            fitSeason = "春/夏FP01";
-        } else if (ss.equals("3") || ss.equals("7") || ss.equals("4") || ss.equals("8")) {
-            fitSeason = "秋/冬FP02";
-        } else {
-            fitSeason = "无FP00";
+        switch (ss) {
+            case "1":
+            case "5":
+            case "2":
+            case "6":
+                fitSeason = "春/夏FP01";
+                break;
+            case "3":
+            case "7":
+            case "4":
+            case "8":
+                fitSeason = "秋/冬FP02";
+                break;
+            default:
+                fitSeason = "无FP00";
+                break;
         }
         return fitSeason;
     }
@@ -539,114 +802,169 @@ public class ProductUtil {
 //021	亚黑	042	枣红	053	蓝绿	070	灰色	093	红咖	116	裸粉
     public static String getOriginColor(String color) {
         String originColor;
-        if (color.equals("010")) {
-            originColor = "珍珠白";
-        } else if (color.equals("011")) {
-            originColor = "漂白";
-        } else if (color.equals("012")) {
-            originColor = "本白";
-        } else if (color.equals("014")) {
-            originColor = "米白";
-        } else if (color.equals("020")) {
-            originColor = "黑色";
-        } else if (color.equals("029")) {
-            originColor = "沙色";
-        } else if (color.equals("030")) {
-            originColor = "米色";
-        } else if (color.equals("031")) {
-            originColor = "棕米色";
-        } else if (color.equals("033")) {
-            originColor = "卡其色";
-        } else if (color.equals("035")) {
-            originColor = "米黄";
-        } else if (color.equals("040")) {
-            originColor = "橡皮红";
-        } else if (color.equals("041")) {
-            originColor = "大红";
-        } else if (color.equals("042")) {
-            originColor = "枣红";
-        } else if (color.equals("043")) {
-            originColor = "粉红";
-        } else if (color.equals("044")) {
-            originColor = "紫红";
-        } else if (color.equals("045")) {
-            originColor = "桔红";
-        } else if (color.equals("046")) {
-            originColor = "梅红";
-        } else if (color.equals("047")) {
-            originColor = "铁锈红";
-        } else if (color.equals("048")) {
-            originColor = "肉粉色";
-        } else if (color.equals("049")) {
-            originColor = "桃红";
-        } else if (color.equals("050")) {
-            originColor = "浅粉桔";
-        } else if (color.equals("051")) {
-            originColor = "果绿";
-        } else if (color.equals("052")) {
-            originColor = "军绿";
-        } else if (color.equals("053")) {
-            originColor = "蓝绿";
-        } else if (color.equals("054")) {
-            originColor = "墨绿";
-        } else if (color.equals("055")) {
-            originColor = "亮绿";
-        } else if (color.equals("056")) {
-            originColor = "灰绿";
-        } else if (color.equals("058")) {
-            originColor = "芥末绿";
-        } else if (color.equals("060")) {
-            originColor = "浅蓝";
-        } else if (color.equals("061")) {
-            originColor = "蓝色";
-        } else if (color.equals("062")) {
-            originColor = "宝蓝";
-        } else if (color.equals("063")) {
-            originColor = "深蓝";
-        } else if (color.equals("064")) {
-            originColor = "牛仔蓝";
-        } else if (color.equals("071")) {
-            originColor = "浅灰";
-        } else if (color.equals("072")) {
-            originColor = "中灰";
-        } else if (color.equals("073")) {
-            originColor = "深灰";
-        } else if (color.equals("074")) {
-            originColor = "花灰";
-        } else if (color.equals("081")) {
-            originColor = "紫色";
-        } else if (color.equals("084")) {
-            originColor = "灰紫";
-        } else if (color.equals("091")) {
-            originColor = "咖啡";
-        } else if (color.equals("092")) {
-            originColor = "棕色";
-        } else if (color.equals("093")) {
-            originColor = "红咖";
-        } else if (color.equals("101")) {
-            originColor = "鹅黄";
-        } else if (color.equals("102")) {
-            originColor = "桔黄";
-        } else if (color.equals("103")) {
-            originColor = "浅黄";
-        } else if (color.equals("104")) {
-            originColor = "黄色";
-        } else if (color.equals("105")) {
-            originColor = "深黄";
-        } else if (color.equals("111")) {
-            originColor = "藏青色";
-        } else if (color.equals("112")) {
-            originColor = "金色";
-        } else if (color.equals("115")) {
-            originColor = "裸色";
-        } else if (color.equals("116")) {
-            originColor = "粉桔";
-        } else if (color.equals("117")) {
-            originColor = "水绿";
-        } else if (color.equals("118")) {
-            originColor = "绿色";
-        } else {
-            originColor = color;
+        switch (color) {
+            case "010":
+                originColor = "珍珠白";
+                break;
+            case "011":
+                originColor = "漂白";
+                break;
+            case "012":
+                originColor = "本白";
+                break;
+            case "014":
+                originColor = "米白";
+                break;
+            case "020":
+                originColor = "黑色";
+                break;
+            case "029":
+                originColor = "沙色";
+                break;
+            case "030":
+                originColor = "米色";
+                break;
+            case "031":
+                originColor = "棕米色";
+                break;
+            case "033":
+                originColor = "卡其色";
+                break;
+            case "035":
+                originColor = "米黄";
+                break;
+            case "040":
+                originColor = "橡皮红";
+                break;
+            case "041":
+                originColor = "大红";
+                break;
+            case "042":
+                originColor = "枣红";
+                break;
+            case "043":
+                originColor = "粉红";
+                break;
+            case "044":
+                originColor = "紫红";
+                break;
+            case "045":
+                originColor = "桔红";
+                break;
+            case "046":
+                originColor = "梅红";
+                break;
+            case "047":
+                originColor = "铁锈红";
+                break;
+            case "048":
+                originColor = "肉粉色";
+                break;
+            case "049":
+                originColor = "桃红";
+                break;
+            case "050":
+                originColor = "浅粉桔";
+                break;
+            case "051":
+                originColor = "果绿";
+                break;
+            case "052":
+                originColor = "军绿";
+                break;
+            case "053":
+                originColor = "蓝绿";
+                break;
+            case "054":
+                originColor = "墨绿";
+                break;
+            case "055":
+                originColor = "亮绿";
+                break;
+            case "056":
+                originColor = "灰绿";
+                break;
+            case "058":
+                originColor = "芥末绿";
+                break;
+            case "060":
+                originColor = "浅蓝";
+                break;
+            case "061":
+                originColor = "蓝色";
+                break;
+            case "062":
+                originColor = "宝蓝";
+                break;
+            case "063":
+                originColor = "深蓝";
+                break;
+            case "064":
+                originColor = "牛仔蓝";
+                break;
+            case "071":
+                originColor = "浅灰";
+                break;
+            case "072":
+                originColor = "中灰";
+                break;
+            case "073":
+                originColor = "深灰";
+                break;
+            case "074":
+                originColor = "花灰";
+                break;
+            case "081":
+                originColor = "紫色";
+                break;
+            case "084":
+                originColor = "灰紫";
+                break;
+            case "091":
+                originColor = "咖啡";
+                break;
+            case "092":
+                originColor = "棕色";
+                break;
+            case "093":
+                originColor = "红咖";
+                break;
+            case "101":
+                originColor = "鹅黄";
+                break;
+            case "102":
+                originColor = "桔黄";
+                break;
+            case "103":
+                originColor = "浅黄";
+                break;
+            case "104":
+                originColor = "黄色";
+                break;
+            case "105":
+                originColor = "深黄";
+                break;
+            case "111":
+                originColor = "藏青色";
+                break;
+            case "112":
+                originColor = "金色";
+                break;
+            case "115":
+                originColor = "裸色";
+                break;
+            case "116":
+                originColor = "粉桔";
+                break;
+            case "117":
+                originColor = "水绿";
+                break;
+            case "118":
+                originColor = "绿色";
+                break;
+            default:
+                originColor = color;
+                break;
         }
         return originColor;
     }
@@ -717,41 +1035,85 @@ public class ProductUtil {
     //TODO
     public static String getColorType(String color) {
         String colorType;
-        if (color.equals("010") || color.equals("011") || color.equals("012")
-                || color.equals("014") || color.equals("030")) {
-            colorType = "白色";
-        } else if (color.equals("043") || color.equals("046") || color.equals("048")
-                || color.equals("049") || color.equals("116")) {
-            colorType = "粉色";
-        } else if (color.equals("020")) {
-            colorType = "黑色";
-        } else if (color.equals("040") || color.equals("041") || color.equals("042")
-                || color.equals("044") || color.equals("047")) {
-            colorType = "红色";
-        } else if (color.equals("033") || color.equals("035") || color.equals("101")
-                || color.equals("103") || color.equals("104") || color.equals("105")
-                || color.equals("112") || color.equals("115")) {
-            colorType = "黄色";
-        } else if (color.equals("071") || color.equals("072") || color.equals("073")
-                || color.equals("074")) {
-            colorType = "灰色";
-        } else if (color.equals("045") || color.equals("050") || color.equals("102")
-                || color.equals("116")) {
-            colorType = "桔色";
-        } else if (color.equals("060") || color.equals("061") || color.equals("062")
-                || color.equals("063") || color.equals("064") || color.equals("111")) {
-            colorType = "蓝色";
-        } else if (color.equals("051") || color.equals("052") || color.equals("053")
-                || color.equals("054") || color.equals("055") || color.equals("056")
-                || color.equals("058") || color.equals("117") || color.equals("118")) {
-            colorType = "绿色";
-        } else if (color.equals("081") || color.equals("084")) {
-            colorType = "紫色";
-        } else if (color.equals("029") || color.equals("031") || color.equals("091")
-                || color.equals("092") || color.equals("093")) {
-            colorType = "棕色";
-        } else {
-            colorType = "#" + color;
+        switch (color) {
+            case "010":
+            case "011":
+            case "012":
+            case "014":
+            case "030":
+                colorType = "白色";
+                break;
+            case "043":
+            case "046":
+            case "048":
+            case "049":
+                colorType = "粉色";
+                break;
+            case "020":
+                colorType = "黑色";
+                break;
+            case "040":
+            case "041":
+            case "042":
+            case "044":
+            case "047":
+                colorType = "红色";
+                break;
+            case "033":
+            case "035":
+            case "101":
+            case "103":
+            case "104":
+            case "105":
+            case "112":
+            case "115":
+                colorType = "黄色";
+                break;
+            case "071":
+            case "072":
+            case "073":
+            case "074":
+                colorType = "灰色";
+                break;
+            case "045":
+            case "050":
+            case "102":
+            case "116":
+                colorType = "桔色";
+                break;
+            case "060":
+            case "061":
+            case "062":
+            case "063":
+            case "064":
+            case "111":
+                colorType = "蓝色";
+                break;
+            case "051":
+            case "052":
+            case "053":
+            case "054":
+            case "055":
+            case "056":
+            case "058":
+            case "117":
+            case "118":
+                colorType = "绿色";
+                break;
+            case "081":
+            case "084":
+                colorType = "紫色";
+                break;
+            case "029":
+            case "031":
+            case "091":
+            case "092":
+            case "093":
+                colorType = "棕色";
+                break;
+            default:
+                colorType = "#" + color;
+                break;
         }
         return colorType;
     }
@@ -760,18 +1122,25 @@ public class ProductUtil {
     //080 081 170 180
     public static String getLocalSize(String size) {
         String localSize;
-        if (size.equals("01")) {
-            localSize = "S";
-        } else if (size.equals("02")) {
-            localSize = "M";
-        } else if (size.equals("03")) {
-            localSize = "L";
-        } else if (size.equals("04")) {
-            localSize = "XL";
-        } else if (size.equals("05")) {
-            localSize = "XXL";
-        } else {
-            localSize = "#";
+        switch (size) {
+            case "01":
+                localSize = "S";
+                break;
+            case "02":
+                localSize = "M";
+                break;
+            case "03":
+                localSize = "L";
+                break;
+            case "04":
+                localSize = "XL";
+                break;
+            case "05":
+                localSize = "XXL";
+                break;
+            default:
+                localSize = "#";
+                break;
         }
         return localSize;
     }
@@ -782,33 +1151,47 @@ public class ProductUtil {
             String ts;
             ts = sn.substring(7, 10);
             if (ts.equals("080") || ts.equals("081") || ts.equals("170") || ts.equals("180")) {  //kuzi
-                if (size.equals("01")) {
-                    localSize = "S";
-                } else if (size.equals("02")) {
-                    localSize = "M";
-                } else if (size.equals("03")) {
-                    localSize = "L";
-                } else if (size.equals("04")) {
-                    localSize = "XL";
-                } else if (size.equals("05")) {
-                    localSize = "XXL";
-                } else {
-                    localSize = "#";
+                switch (size) {
+                    case "01":
+                        localSize = "S";
+                        break;
+                    case "02":
+                        localSize = "M";
+                        break;
+                    case "03":
+                        localSize = "L";
+                        break;
+                    case "04":
+                        localSize = "XL";
+                        break;
+                    case "05":
+                        localSize = "XXL";
+                        break;
+                    default:
+                        localSize = "#";
+                        break;
                 }
             } else //shangyi
             {
-                if (size.equals("01")) {
-                    localSize = "S";
-                } else if (size.equals("02")) {
-                    localSize = "M";
-                } else if (size.equals("03")) {
-                    localSize = "L";
-                } else if (size.equals("04")) {
-                    localSize = "XL";
-                } else if (size.equals("05")) {
-                    localSize = "XXL";
-                } else {
-                    localSize = "#";
+                switch (size) {
+                    case "01":
+                        localSize = "S";
+                        break;
+                    case "02":
+                        localSize = "M";
+                        break;
+                    case "03":
+                        localSize = "L";
+                        break;
+                    case "04":
+                        localSize = "XL";
+                        break;
+                    case "05":
+                        localSize = "XXL";
+                        break;
+                    default:
+                        localSize = "#";
+                        break;
                 }
             }
 
@@ -816,33 +1199,47 @@ public class ProductUtil {
             String ts;
             ts = sn.substring(5, 8);
             if (ts.equals("080") || ts.equals("081") || ts.equals("170") || ts.equals("180")) {  //kuzi
-                if (size.equals("01")) {
-                    localSize = "S";
-                } else if (size.equals("02")) {
-                    localSize = "M";
-                } else if (size.equals("03")) {
-                    localSize = "L";
-                } else if (size.equals("04")) {
-                    localSize = "XL";
-                } else if (size.equals("05")) {
-                    localSize = "XXL";
-                } else {
-                    localSize = "#";
+                switch (size) {
+                    case "01":
+                        localSize = "S";
+                        break;
+                    case "02":
+                        localSize = "M";
+                        break;
+                    case "03":
+                        localSize = "L";
+                        break;
+                    case "04":
+                        localSize = "XL";
+                        break;
+                    case "05":
+                        localSize = "XXL";
+                        break;
+                    default:
+                        localSize = "#";
+                        break;
                 }
             } else //shangyi
             {
-                if (size.equals("01")) {
-                    localSize = "S";
-                } else if (size.equals("02")) {
-                    localSize = "M";
-                } else if (size.equals("03")) {
-                    localSize = "L";
-                } else if (size.equals("04")) {
-                    localSize = "XL";
-                } else if (size.equals("05")) {
-                    localSize = "XXL";
-                } else {
-                    localSize = "#";
+                switch (size) {
+                    case "01":
+                        localSize = "S";
+                        break;
+                    case "02":
+                        localSize = "M";
+                        break;
+                    case "03":
+                        localSize = "L";
+                        break;
+                    case "04":
+                        localSize = "XL";
+                        break;
+                    case "05":
+                        localSize = "XXL";
+                        break;
+                    default:
+                        localSize = "#";
+                        break;
                 }
             }
         } else {    //0ld
@@ -854,33 +1251,47 @@ public class ProductUtil {
             }
             //done...
             if (ts.equals("08") || ts.equals("09") || ts.equals("18")) {  //kuzi
-                if (size.equals("01")) {
-                    localSize = "S";
-                } else if (size.equals("02")) {
-                    localSize = "M";
-                } else if (size.equals("03")) {
-                    localSize = "L";
-                } else if (size.equals("04")) {
-                    localSize = "XL";
-                } else if (size.equals("05")) {
-                    localSize = "XXL";
-                } else {
-                    localSize = "#";
+                switch (size) {
+                    case "01":
+                        localSize = "S";
+                        break;
+                    case "02":
+                        localSize = "M";
+                        break;
+                    case "03":
+                        localSize = "L";
+                        break;
+                    case "04":
+                        localSize = "XL";
+                        break;
+                    case "05":
+                        localSize = "XXL";
+                        break;
+                    default:
+                        localSize = "#";
+                        break;
                 }
             } else //shangyi
             {
-                if (size.equals("01")) {
-                    localSize = "S";
-                } else if (size.equals("02")) {
-                    localSize = "M";
-                } else if (size.equals("03")) {
-                    localSize = "L";
-                } else if (size.equals("04")) {
-                    localSize = "XL";
-                } else if (size.equals("05")) {
-                    localSize = "XXL";
-                } else {
-                    localSize = "#";
+                switch (size) {
+                    case "01":
+                        localSize = "S";
+                        break;
+                    case "02":
+                        localSize = "M";
+                        break;
+                    case "03":
+                        localSize = "L";
+                        break;
+                    case "04":
+                        localSize = "XL";
+                        break;
+                    case "05":
+                        localSize = "XXL";
+                        break;
+                    default:
+                        localSize = "#";
+                        break;
                 }
             }
         }
@@ -897,33 +1308,47 @@ public class ProductUtil {
             typeCode = sn.substring(7, 10);
             if (typeCode.equals("081") || typeCode.equals("170") || typeCode.equals("080")
                     || typeCode.equals("180") || typeCode.equals("090") || typeCode.equals("091")) {  //kuzi
-                if (size.equals("01")) {
-                    worldSize = "155/62A";
-                } else if (size.equals("02")) {
-                    worldSize = "160/66A";
-                } else if (size.equals("03")) {
-                    worldSize = "165/70A";
-                } else if (size.equals("04")) {
-                    worldSize = "170/74A";
-                } else if (size.equals("05")) {
-                    worldSize = "175/78A";
-                } else {
-                    worldSize = "#" + typeCode;
+                switch (size) {
+                    case "01":
+                        worldSize = "155/62A";
+                        break;
+                    case "02":
+                        worldSize = "160/66A";
+                        break;
+                    case "03":
+                        worldSize = "165/70A";
+                        break;
+                    case "04":
+                        worldSize = "170/74A";
+                        break;
+                    case "05":
+                        worldSize = "175/78A";
+                        break;
+                    default:
+                        worldSize = "#" + typeCode;
+                        break;
                 }
-            } else {//shangyi
-                if (size.equals("01")) {
-                       worldSize = "155/80A";
-                   } else if (size.equals("02")) {
-                       worldSize = "160/84A";
-                   } else if (size.equals("03")) {
-                       worldSize = "165/88A";
-                   } else if (size.equals("04")) {
-                       worldSize = "170/92A";
-                   } else if (size.equals("05")) {
-                       worldSize = "175/96A";
-                   } else {
-                       worldSize = "#";
-                   }
+            } else { //shangyi
+                switch (size) {
+                    case "01":
+                        worldSize = "155/80A";
+                        break;
+                    case "02":
+                        worldSize = "160/84A";
+                        break;
+                    case "03":
+                        worldSize = "165/88A";
+                        break;
+                    case "04":
+                        worldSize = "170/92A";
+                        break;
+                    case "05":
+                        worldSize = "175/96A";
+                        break;
+                    default:
+                        worldSize = "#";
+                        break;
+                }
             }
         } else if (sn.matches(NAMEREG)) {// after 2014 2013 133Exxx  1341Exxx
             String typeCode;
@@ -933,94 +1358,136 @@ public class ProductUtil {
             if (typeCode.equals("081") || typeCode.equals("170") || typeCode.equals("080")
                     || typeCode.equals("180") || typeCode.equals("090") || typeCode.equals("091")) {  //kuzi
                 if (i < 133) {
-                     if (size.equals("01")) {
-                        worldSize = "155/60A";
-                    } else if (size.equals("02")) {
-                        worldSize = "160/64A";
-                    } else if (size.equals("03")) {
-                        worldSize = "165/68A";
-                    } else if (size.equals("04")) {
-                        worldSize = "170/72A";
-                    } else if (size.equals("05")) {
-                        worldSize = "175/76A";
-                    } else {
-                        worldSize = "#" + typeCode;
+                    switch (size) {
+                        case "01":
+                            worldSize = "155/60A";
+                            break;
+                        case "02":
+                            worldSize = "160/64A";
+                            break;
+                        case "03":
+                            worldSize = "165/68A";
+                            break;
+                        case "04":
+                            worldSize = "170/72A";
+                            break;
+                        case "05":
+                            worldSize = "175/76A";
+                            break;
+                        default:
+                            worldSize = "#" + typeCode;
+                            break;
                     }
                 } else {
-                   if (size.equals("01")) {
-                        worldSize = "155/62A";
-                    } else if (size.equals("02")) {
-                        worldSize = "160/66A";
-                    } else if (size.equals("03")) {
-                        worldSize = "165/70A";
-                    } else if (size.equals("04")) {
-                        worldSize = "170/74A";
-                    } else if (size.equals("05")) {
-                        worldSize = "175/78A";
-                    } else {
-                        worldSize = "#" + typeCode;
+                    switch (size) {
+                        case "01":
+                            worldSize = "155/62A";
+                            break;
+                        case "02":
+                            worldSize = "160/66A";
+                            break;
+                        case "03":
+                            worldSize = "165/70A";
+                            break;
+                        case "04":
+                            worldSize = "170/74A";
+                            break;
+                        case "05":
+                            worldSize = "175/78A";
+                            break;
+                        default:
+                            worldSize = "#" + typeCode;
+                            break;
                     }
                 }
             } else {//shangyi
                 if(typeCode.equals("100")){         //针织衫
                     if(i>132 && i<143){
-                        if (size.equals("01")) {
-                            worldSize = "75cm";
-                        } else if (size.equals("02")) {
-                            worldSize = "80cm";
-                        } else if (size.equals("03")) {
-                            worldSize = "85cm";
-                        } else if (size.equals("04")) {
-                            worldSize = "90cm";
-                        } else if (size.equals("05")) {
-                            worldSize = "95cm";
-                        } else {
-                            worldSize = "#" + typeCode;
+                        switch (size) {
+                            case "01":
+                                worldSize = "75cm";
+                                break;
+                            case "02":
+                                worldSize = "80cm";
+                                break;
+                            case "03":
+                                worldSize = "85cm";
+                                break;
+                            case "04":
+                                worldSize = "90cm";
+                                break;
+                            case "05":
+                                worldSize = "95cm";
+                                break;
+                            default:
+                                worldSize = "#" + typeCode;
+                                break;
                         }
                     }
                     else if (i<133) {
-                        if (size.equals("01")) {
-                            worldSize = "76cm";
-                        } else if (size.equals("02")) {
-                            worldSize = "80cm";
-                        } else if (size.equals("03")) {
-                            worldSize = "84cm";
-                        } else if (size.equals("04")) {
-                            worldSize = "88cm";
-                        } else if (size.equals("05")) {
-                            worldSize = "92cm";
-                        } else {
-                            worldSize = "#" + typeCode;
+                        switch (size) {
+                            case "01":
+                                worldSize = "76cm";
+                                break;
+                            case "02":
+                                worldSize = "80cm";
+                                break;
+                            case "03":
+                                worldSize = "84cm";
+                                break;
+                            case "04":
+                                worldSize = "88cm";
+                                break;
+                            case "05":
+                                worldSize = "92cm";
+                                break;
+                            default:
+                                worldSize = "#" + typeCode;
+                                break;
                         }
                     }else{
-                        if (size.equals("01")) {
-                        worldSize = "155/80A";
-                        } else if (size.equals("02")) {
-                            worldSize = "160/84A";
-                        } else if (size.equals("03")) {
-                            worldSize = "165/88A";
-                        } else if (size.equals("04")) {
-                            worldSize = "170/92A";
-                        } else if (size.equals("05")) {
-                            worldSize = "175/96A";
-                        } else {
-                            worldSize = "#" +typeCode;
+                        switch (size) {
+                            case "01":
+                                worldSize = "155/80A";
+                                break;
+                            case "02":
+                                worldSize = "160/84A";
+                                break;
+                            case "03":
+                                worldSize = "165/88A";
+                                break;
+                            case "04":
+                                worldSize = "170/92A";
+                                break;
+                            case "05":
+                                worldSize = "175/96A";
+                                break;
+                            default:
+                                worldSize = "#" +typeCode;
+                                break;
                         }
                     }
                 }else{
-                    if (size.equals("01")) {
-                        worldSize = "155/80A";
-                    } else if (size.equals("02")) {
-                        worldSize = "160/84A";
-                    } else if (size.equals("03")) {
-                        worldSize = "165/88A";
-                    } else if (size.equals("04")) {
-                        worldSize = "170/92A";
-                    } else if (size.equals("05")) {
-                        worldSize = "175/96A";
-                    } else {
-                        worldSize = "#" + typeCode;
-                    }                   
+                    switch (size) {
+                        case "01":
+                            worldSize = "155/80A";
+                            break;
+                        case "02":
+                            worldSize = "160/84A";
+                            break;
+                        case "03":
+                            worldSize = "165/88A";
+                            break;
+                        case "04":
+                            worldSize = "170/92A";
+                            break;                   
+                        case "05":
+                            worldSize = "175/96A";
+                            break;
+                        default:
+                            worldSize = "#" + typeCode;
+                            break;
+                    }
                 }
             }
         } else {    //0ld
@@ -1031,48 +1498,69 @@ public class ProductUtil {
                 typeCode = sn.substring(5, 7);
             }
             if (typeCode.equals("08") || typeCode.equals("09") || typeCode.equals("18")) {  //kuzi
-                if (size.equals("01")) {
-                    worldSize = "155/60A";
-                } else if (size.equals("02")) {
-                    worldSize = "160/64A";
-                } else if (size.equals("03")) {
-                    worldSize = "165/68A";
-                } else if (size.equals("04")) {
-                    worldSize = "170/72A";
-                } else if (size.equals("05")) {
-                    worldSize = "175/76A";
-                } else {
-                    worldSize = "#" + typeCode;
+                switch (size) {
+                    case "01":
+                        worldSize = "155/60A";
+                        break;
+                    case "02":
+                        worldSize = "160/64A";
+                        break;
+                    case "03":
+                        worldSize = "165/68A";
+                        break;
+                    case "04":
+                        worldSize = "170/72A";
+                        break;
+                    case "05":
+                        worldSize = "175/76A";
+                        break;
+                    default:
+                        worldSize = "#" + typeCode;
+                        break;
                 }
             } else //shangyi
             {
-                if (typeCode.equals("10")) {//毛衫
-                    if (size.equals("01")) {
-                        worldSize = "76cm";
-                    } else if (size.equals("02")) {
-                        worldSize = "80cm";
-                    } else if (size.equals("03")) {
-                        worldSize = "84cm";
-                    } else if (size.equals("04")) {
-                        worldSize = "88cm";
-                    } else if (size.equals("05")) {
-                        worldSize = "92A";
-                    } else {
-                        worldSize = "#" + typeCode;
+                if (typeCode.equals("10")) { //毛衫
+                    switch (size) {
+                        case "01":
+                            worldSize = "76cm";
+                            break;
+                        case "02":
+                            worldSize = "80cm";
+                            break;
+                        case "03":
+                            worldSize = "84cm";
+                            break;
+                        case "04":
+                            worldSize = "88cm";
+                            break;
+                        case "05":
+                            worldSize = "92A";
+                            break;
+                        default:
+                            worldSize = "#" + typeCode;
+                            break;
                     }
                 }else{
-                    if (size.equals("01")) {
-                        worldSize = "155/80A";
-                    } else if (size.equals("02")) {
-                        worldSize = "160/84A";
-                    } else if (size.equals("03")) {
-                        worldSize = "165/88A";
-                    } else if (size.equals("04")) {
-                        worldSize = "170/92A";
-                    } else if (size.equals("05")) {
-                        worldSize = "175/96A";
-                    } else {
-                        worldSize = "#" + typeCode;
+                    switch (size) {
+                        case "01":
+                            worldSize = "155/80A";
+                            break;
+                        case "02":
+                            worldSize = "160/84A";
+                            break;
+                        case "03":
+                            worldSize = "165/88A";
+                            break;
+                        case "04":
+                            worldSize = "170/92A";
+                            break;
+                        case "05":
+                            worldSize = "175/96A";
+                            break;
+                        default:
+                            worldSize = "#" + typeCode;
+                            break;
                     }
                 }
             }
