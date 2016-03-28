@@ -5,7 +5,6 @@
 --%>
 
 <%@page import="com.coastshop.util.ProductUtil"%>
-<%@page import="com.coastshop.util.ProductUtil2015"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
