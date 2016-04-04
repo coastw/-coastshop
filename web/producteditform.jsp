@@ -9,7 +9,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Product Edit | CoastShop</title>
+        <title>秋水 | Product Edit | CoastShop</title>
         <link type="text/css" rel="stylesheet" href="css/redmond/jquery-ui-1.9.2.custom.css" />
         <link type="text/css" rel="stylesheet" href="css/style.css" />
         <script type="text/javascript" src="js/jquery-1.8.3.js"></script>

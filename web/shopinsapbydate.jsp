@@ -1,6 +1,6 @@
 <%-- 
-    Document   : bjd
-    Created on : 2013-8-24, 8:06:59
+    Document   : sap
+    Created on : 2016-4-4, 13:46:59
     Author     : 
     describe   :通过ajax方式查询shop列表和brand列表（MVC）
 --%>
@@ -46,30 +46,13 @@
         <div id="myform">
             <div id="titlebar">生成上品SAP</div>
             <div id="bjdform">		<!-- form -->
-                <p class="validateTips">根据出/入库单生成上品SAP</p>
-                <form id="form1" action="out2sap.do" method="get">
+                <p class="validateTips">根据日期生成上品SAP</p>
+                <form id="form1" action="shopinsapbydate.do" method="get">
                     <fieldset>
-                        <label>地点</label>
-                        <select name="shopid" class="text ui-widget-content select">
-                            <c:forEach  var="shop" items="<%=shoplist%>">
-                                <option value="${shop.id}">${shop.name}</option>
-                            </c:forEach>
-                        </select>
-                        <label>品牌</label>
-                        <select name="brandid" class="text ui-widget-content select">
-                            <c:forEach  var="brand" items="<%= brandlist%>">
-                                <option value="${brand.id}">${brand.name}</option>
-                            </c:forEach>
-                        </select>
                         <label for="date1">起始日期</label>
                         <input type="text" name="date1" id="datepicker1" class="text ui-widget-content" />
                         <label>结束日期</label>
                         <input type="text" name="date2" id="datepicker2" class="text ui-widget-content" />
-                        <label>筛选</label>
-                        <select name="distinct" class="text ui-widget-content select">
-                            <option value="scs">按条码</option>
-                            <option value="sn">按款号</option>
-                        </select>
                         <button id="button">提 交</button>
                     </fieldset>
                 </form>

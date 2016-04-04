@@ -24,7 +24,7 @@
         <script type="text/javascript" src="js/jquery-ui-1.9.2.custom.js"></script>
         <script type="text/javascript" src="js/jquery.ui.datepicker-zh-CN.js"></script>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>报价单 | CoastShop</title>
+        <title>秋水 | 报价单 | CoastShop</title>
             
         <script type="text/javascript">
             $(function() {	//	onload

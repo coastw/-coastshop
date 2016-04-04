@@ -17,7 +17,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="css/style.css" />
-        <title>出库单 | CoastShop</title>
+        <title>秋水 | 出库单 | CoastShop</title>
         <script type="text/javascript" src="js/jquery-1.8.3.js"></script>
         <script type="text/javascript">
             $(function(){

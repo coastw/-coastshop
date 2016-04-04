@@ -35,7 +35,7 @@
                 $("#sum").text(amount);
             });
         </script>
-        <title>出库单明细 | CoastShop</title>
+        <title>秋水 | 出库单明细 | CoastShop</title>
     </head>
     <body>
         <h3><a href="index.jsp">首页</a>-><a href="outlist.do">出库单列表</a>->出库单明细</h3>

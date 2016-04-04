@@ -13,7 +13,7 @@
         <meta http-equiv="pragma" content="no-cache"> 
         <meta http-equiv="cache-control" content="no-cache"> 
         <meta http-equiv="expires" content="0"> 
-        <title>扫单页 | CoastShop</title>
+        <title>秋水 | 扫单页 | CoastShop</title>
         <link rel="stylesheet" href="css/redmond/jquery-ui-1.9.2.custom.min.css" />
         <style type="text/css">
             .no-close .ui-dialog-titlebar-close {

@@ -10,7 +10,7 @@
 <html>
     <head>
         <jsp:include page="include/head.jsp" />
-        <title>折扣管理 | CoastShop</title>
+        <title>秋水 | 折扣管理 | CoastShop</title>
         <script type="text/javascript">
             $(function() {
                 $("table").on("mouseover", "tr", function() {

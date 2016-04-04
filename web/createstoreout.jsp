@@ -21,7 +21,7 @@
                 });
             });
         </script>
-        <title>扫描吊牌</title>
+        <title>秋水 | 扫描吊牌</title>
     </head>
     <body>
         <div>

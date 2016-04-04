@@ -10,7 +10,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>款号查询 | CoastShop</title>
+        <title>秋水 | 款号查询 | CoastShop</title>
         <link rel="stylesheet" href="css/style.css" />
         <script type="text/javascript" src="js/jquery-1.8.3.js"></script>
         <script type="text/javascript">

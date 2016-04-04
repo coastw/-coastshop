@@ -23,7 +23,7 @@
         <script type="text/javascript" src="js/jquery-1.8.3.js"></script>
         <script type="text/javascript" src="js/jquery-ui-1.9.2.custom.js"></script>
         <script type="text/javascript" src="js/jquery.ui.datepicker-zh-CN.js"></script>
-        <title>新建出库单 | CoastShop</title>
+        <title>秋水 | 新建出库单 | CoastShop</title>
             
         <script type="text/javascript">
             $(function() {	//	onload

@@ -20,6 +20,7 @@ public class ProductUtil {
     public static final String COLORREGEX = "^[0-9]{3}$";
     public static final String SIZEREGEX = "^[0][1-5]$";
     public static final String SNOREGEX = "(^[1]{1}[0-9]{1}[1-8]{1}[0-9]{1}[0-9]{5}|^[1]{1}[0-9]{1}[1-8]{1}[0-9a-zA-Z]{2}[0-9]{6})[0-9]{3}[0][1-5]$"; //sn color size
+    public static final String[] SIZE_STRINGS = {"01","02","03","04","05"};
 
     //15101AE020012
     //15101AE020012

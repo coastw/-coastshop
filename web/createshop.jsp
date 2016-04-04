@@ -9,7 +9,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>创建商店 | CoastShop</title>
+        <title>秋水 | 创建商店 | CoastShop</title>
         <jsp:include page="include/head.jsp" />
         <script type="text/javascript">
             $(function() {
