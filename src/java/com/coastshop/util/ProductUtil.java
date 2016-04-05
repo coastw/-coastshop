@@ -1536,7 +1536,7 @@ public class ProductUtil {
                             worldSize = "88cm";
                             break;
                         case "05":
-                            worldSize = "92A";
+                            worldSize = "92cm";
                             break;
                         default:
                             worldSize = "#" + typeCode;
