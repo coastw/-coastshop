@@ -20,7 +20,7 @@ public class ProductUtil {
     public static final String COLORREGEX = "^[0-9]{3}$";
     public static final String SIZEREGEX = "^[0][1-5]$";
     public static final String SNOREGEX = "(^[1]{1}[0-9]{1}[1-8]{1}[0-9]{1}[0-9]{5}|^[1]{1}[0-9]{1}[1-8]{1}[0-9a-zA-Z]{2}[0-9]{6})[0-9]{3}[0][1-5]$"; //sn color size
-    public static final String[] SIZE_STRINGS = {"01","02","03","04","05"};
+    public static final String[] SIZE_STRINGS = {"01", "02", "03", "04", "05"};
 
     //15101AE020012
     //15101AE020012
@@ -135,7 +135,7 @@ public class ProductUtil {
                 year = "2009";
                 break;
             default:
-                year = "#"+ys;
+                year = "#" + ys;
                 break;
         }
         return year;
@@ -162,7 +162,7 @@ public class ProductUtil {
                 season = "冬";
                 break;
             default:
-                season = "#"+ss;
+                season = "#" + ss;
                 break;
         }
         return season;
@@ -173,7 +173,12 @@ public class ProductUtil {
         if (sn.matches(NAMEREG2015)) {//after 2015
             String Ts2015 = sn.substring(7, 10);
             switch (Ts2015) {
+                case "033":
+                case "053":
+                    type = "上衣";
+                    break;
                 case "010":
+                case "013":
                     type = "套装";
                     break;
                 case "020":
@@ -181,6 +186,9 @@ public class ProductUtil {
                     break;
                 case "021":
                     type = "针织连衣裙";
+                    break;
+                case "023":
+                    type = "连衣裙";
                     break;
                 case "030":
                     type = "针织上衣";
@@ -253,8 +261,14 @@ public class ProductUtil {
                 case "890":
                     type = "内衣";
                     break;
+                case "083":
+                    type = "裤子";
+                    break;
+                case "092":
+                    type = "裙子";
+                    break;
                 default:
-                    type = "#"+Ts2015;
+                    type = "#" + Ts2015;
                     break;
             }
             return type;
@@ -342,7 +356,7 @@ public class ProductUtil {
                     type = "内衣";
                     break;
                 default:
-                    type = "#"+newTs;
+                    type = "#" + newTs;
                     break;
             }
             return type;
@@ -406,7 +420,7 @@ public class ProductUtil {
                     type = "休闲裤";
                     break;
                 default:
-                    type = "#"+ts;
+                    type = "#" + ts;
                     break;
             }
             return type;
@@ -435,6 +449,7 @@ public class ProductUtil {
                 case "031":
                 case "040":
                 case "050":
+                case "053":
                 case "060":
                 case "070":
                 case "071":
@@ -450,18 +465,23 @@ public class ProductUtil {
                 case "190":
                 case "010":
                 case "890":
+                case "033":
+                case "013":
                     secondType = "女装上装";
                     break;
                 case "080":
                 case "081":
+                case "083":
                 case "170":
                 case "180":
                     secondType = "女装裤子";
                     break;
                 case "090":
                 case "091":
+                case "092":
                 case "020":
                 case "021":
+                case "023":
                 case "102":
                     secondType = "裙装";
                     break;
@@ -497,6 +517,7 @@ public class ProductUtil {
                     break;
                 case "080":
                 case "081":
+                case "083":
                 case "170":
                 case "180":
                     secondType = "女装裤子";
@@ -545,7 +566,7 @@ public class ProductUtil {
                     secondType = "裙装";
                     break;
                 default:
-                    secondType = "#"+ts;
+                    secondType = "#" + ts;
                     break;
             }
             return secondType;
@@ -577,6 +598,9 @@ public class ProductUtil {
                 case "081":
                     thirdType = "打底裤";
                     break;
+                case "083":
+                    thirdType = "长裤";
+                    break;
                 case "170":
                     thirdType = "牛仔裤";
                     break;
@@ -586,10 +610,12 @@ public class ProductUtil {
                     break;
                 case "090":
                 case "091":
+                case "092":
                     thirdType = "半身裙";
                     break;
                 case "020":
                 case "021":
+                case "023":
                 case "102":
                     thirdType = "连衣裙";
                     break;
@@ -622,6 +648,9 @@ public class ProductUtil {
                 case "071":
                 case "101":
                 case "010":
+                case "013":
+                case "033":
+                case "053":
                     thirdType = "外套";
                     break;
                 case "050":
@@ -1401,9 +1430,10 @@ public class ProductUtil {
                             break;
                     }
                 }
-            } else {//shangyi
-                if(typeCode.equals("100")){         //针织衫
-                    if(i>132 && i<143){
+            } else//shangyi
+            {
+                if (typeCode.equals("100")) {         //针织衫
+                    if (i > 132 && i < 143) {
                         switch (size) {
                             case "01":
                                 worldSize = "75cm";
@@ -1424,8 +1454,7 @@ public class ProductUtil {
                                 worldSize = "#" + typeCode;
                                 break;
                         }
-                    }
-                    else if (i<133) {
+                    } else if (i < 133) {
                         switch (size) {
                             case "01":
                                 worldSize = "76cm";
@@ -1446,7 +1475,7 @@ public class ProductUtil {
                                 worldSize = "#" + typeCode;
                                 break;
                         }
-                    }else{
+                    } else {
                         switch (size) {
                             case "01":
                                 worldSize = "155/80A";
@@ -1464,11 +1493,11 @@ public class ProductUtil {
                                 worldSize = "175/96A";
                                 break;
                             default:
-                                worldSize = "#" +typeCode;
+                                worldSize = "#" + typeCode;
                                 break;
                         }
                     }
-                }else{
+                } else {
                     switch (size) {
                         case "01":
                             worldSize = "155/80A";
@@ -1481,7 +1510,7 @@ public class ProductUtil {
                             break;
                         case "04":
                             worldSize = "170/92A";
-                            break;                   
+                            break;
                         case "05":
                             worldSize = "175/96A";
                             break;
@@ -1542,7 +1571,7 @@ public class ProductUtil {
                             worldSize = "#" + typeCode;
                             break;
                     }
-                }else{
+                } else {
                     switch (size) {
                         case "01":
                             worldSize = "155/80A";
