@@ -459,6 +459,7 @@ public class ProductUtil {
                 case "120":
                 case "121":
                 case "122":
+                case "123":
                 case "150":
                 case "160":
                 case "161":
@@ -629,6 +630,7 @@ public class ProductUtil {
                 case "120":
                 case "121":
                 case "122":
+                case "123":
                     thirdType = "大衣";
                     break;
                 case "110":
@@ -1431,8 +1433,7 @@ public class ProductUtil {
                     }
                 }
             } else//shangyi
-            {
-                if (typeCode.equals("100")) {         //针织衫
+             if (typeCode.equals("100")) {         //针织衫
                     if (i > 132 && i < 143) {
                         switch (size) {
                             case "01":
@@ -1519,7 +1520,6 @@ public class ProductUtil {
                             break;
                     }
                 }
-            }
         } else {    //0ld
             String typeCode;
             if (sn.length() == 9) {
@@ -1549,8 +1549,7 @@ public class ProductUtil {
                         break;
                 }
             } else //shangyi
-            {
-                if (typeCode.equals("10")) { //毛衫
+             if (typeCode.equals("10")) { //毛衫
                     switch (size) {
                         case "01":
                             worldSize = "76cm";
@@ -1593,7 +1592,6 @@ public class ProductUtil {
                             break;
                     }
                 }
-            }
         }
         return worldSize;
     }
