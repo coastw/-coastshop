@@ -461,6 +461,9 @@ public class ProductUtil {
                 case "122":
                 case "123":
                 case "150":
+                case "151":
+                case "152":
+                case "153":
                 case "160":
                 case "161":
                 case "190":
@@ -659,6 +662,9 @@ public class ProductUtil {
                     thirdType = "雪纺衫";
                     break;
                 case "150":
+                case "151":
+                case "152":
+                case "153":
                     thirdType = "羽绒服";
                     break;
                 case "161":
